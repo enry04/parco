@@ -1,4 +1,5 @@
 # parco
+
 inserire 20 regioni italiane
 inserire i parchi per ogni regione
 in ogni parco visualizzare fauna e flora
@@ -6,8 +7,6 @@ singolo animale -> ordine di appartenenza (lista predefinita [rettili, mammiferi
 La flora viene distinta in alberi (lista predefinita [(quercia, faggio, acacia...]), arbusti(lista predefinita [(lavanda, rosmarino, rododendro]), piante erbacee(lista predefinita [(fragola di bosco, margherita, primula])
 Ogni specie vegetale -> Stagione di fioritura e altre caratteristiche, specie  
 gestire estinzione animali -> Se tot animali della stessa specie sono malati allora la specie è a rischio di estinzione
-
-TODO:
 
 L' utente ha la possibilità di:
 
@@ -23,5 +22,9 @@ DATABASE:
 
 1) tRegione -> id, nome;
 2) tParco -> id, nome, idRegione;
-3) tOrdineAppartenenza -> id, nome
-<!-- 3) tAnimale -> id, idOrdine, idSpecie,  -->
+3) tOrdineAppartenenzaFauna -> id, nome;
+4) tSpecieFauna -> id, nome, idOrdineAppartenenzaFauna, stato(è a rischio estinzione?);
+5) tAnimale -> id, idParco, idSpecieFauna, generazione(Adulto/cucciolo), sesso, età;
+6) tFamigliaFlora -> id, nome;
+7) tSpecieFlora -> id, nome, idFamigliaFlora;
+8) tVegetale -> id, idParco, idSpecieFlora, stagioneFioritura;
