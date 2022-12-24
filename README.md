@@ -3,7 +3,7 @@
 inserire 20 regioni italiane
 inserire i parchi per ogni regione
 in ogni parco visualizzare fauna e flora
-singolo animale -> ordine di appartenenza (lista predefinita [rettili, mammiferi, uccelli...]), specie(lista predefinita)[scoiattolo, orso, vipera, volpe, falco, aquila...], se è cucciolo o adulto, maschio o femmina, se è in buona salute
+singolo animale -> ordine di appartenenza (lista predefinita [rettili, mammiferi, uccelli...]), specie(lista predefinita)[scoiattolo, orso, vipera, volpe, falco, aquila...], maschio o femminse è cucciolo o adulto, a, se è in buona salute
 La flora viene distinta in alberi (lista predefinita [(quercia, faggio, acacia...]), arbusti(lista predefinita [(lavanda, rosmarino, rododendro]), piante erbacee(lista predefinita [(fragola di bosco, margherita, primula])
 Ogni specie vegetale -> Stagione di fioritura e altre caratteristiche, specie  
 gestire estinzione animali -> Se tot animali della stessa specie sono malati allora la specie è a rischio di estinzione
@@ -28,3 +28,13 @@ gestire estinzione animali -> Se tot animali della stessa specie sono malati all
 6. tFamigliaFlora -> id, nome;
 7. tSpecieFlora -> id, nome, idFamigliaFlora;
 8. tVegetale -> id, idParco, idSpecieFlora, stagioneFioritura;
+
+**palette:**
+
+Dal più scuro al più chiaro
+
+#132a13
+#31572c
+#4f772d
+#90a955
+#ecf39e
