@@ -11,49 +11,43 @@
 </head>
 
 <body>
-    <header>
-        <div class="header-container">
-            <div class="left-header-container">
-                <h3>
-                    <a href="../main-page/main-page.php">Home</a>
-                </h3>
-                <h3>
-                    <a href="../about-us-page/about-us-page.php">Contatti</a>
-                </h3>
-            </div>
-            <div class="logo-container"></div>
-            <div class="right-header-container">
-                <h3>
-                    <a href="../parks-page/parks-page.php"> I nostri parchi</a>
-                </h3>
-                <div class="hamburger-container"></div>
-            </div>
-        </div>
-    </header>
+    <?php
+    $page = "main";
+    $active = 'class="active-page"';
+    require('../common/php/header.php');
+    ?>
     <main>
         <div class="main-container">
             <div class="text-container">
                 <h4>Benvenuto nel sito del Ministero <br>dell' ambiente! </h4>
-                <h5>Chiunque ha la possibilità di visualizzare<br>
-                    animali e vegetali in ogni parco italiano!<br>
-                    I lavoratori di ogni parco possono <br>
-                    inoltre aggiungere nuovi esemplari
-                    <br>vegetali o animali, modificarne le<br>
-                    caratteristiche e eventaulmente eliminarli!
+                <h5>Offriamo la possibilità di visualizzare gli<br>
+                    animali e i vegetali presenti in ogni <br>
+                    parco italiano!<br>
+                    Il sito è costantemente aggiornato <br>
+                    sia nella flora che nella fauna in<br>
+                    ogni riserva naturale!
                 </h5>
             </div>
             <div class="slide-container">
-                <div class="slide-image-container fade" id="1">
-                    <h6>1 / 4</h6>
+                <div class="slide-image-container first fade hide" id="1">
+                    <h6 class="current-image-text">1 / 4</h6>
                 </div>
-                <div class="slide-image-container second fade" id="2">
-                    <h6>2 / 4</h6>
+                <div class="slide-image-container second fade hide" id="2">
+                    <h6 class="current-image-text">2 / 4</h6>
                 </div>
-                <div class="slide-image-container third fade" id="3">
-                    <h6>3 / 4</h6>
+                <div class="slide-image-container third fade hide" id="3">
+                    <h6 class="current-image-text">3 / 4</h6>
                 </div>
-                <div class="slide-image-container fourth fade" id="4">
-                    <h6>4 / 4</h6>
+                <div class="slide-image-container fourth fade hide" id="4">
+                    <h6 class="current-image-text">4 / 4</h6>
+                </div>
+                <a class="prev">&#10094;</a>
+                <a class="next">&#10095;</a>
+                <div class="dots-container">
+                    <span class="dot" id="1"></span>
+                    <span class="dot" id="2"></span>
+                    <span class="dot" id="3"></span>
+                    <span class="dot" id="4"></span>
                 </div>
             </div>
         </div>
