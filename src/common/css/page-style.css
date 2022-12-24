@@ -13,7 +13,7 @@ body {
 header,
 main,
 footer{
-  margin: 0 2%;
+  margin: 0 2% 250px;
 }
 
 h1,
@@ -29,7 +29,7 @@ a {
 }
 
 h3 {
-  font-size: 38px;
+  font-size: 32px;
 }
 
 h4 {
@@ -67,7 +67,7 @@ a:hover {
 }
 
 .logo-container {
-  background: url("../images/icon-logo.svg");
+  background: url("../images/icons/icon-logo.svg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -76,11 +76,10 @@ a:hover {
 }
 
 .hamburger-container {
-  background: url("../images/icon-hamburger.svg");
+  background: url("../images/icons/icon-hamburger.svg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-  background-clip: content-box;
   width: 100px;
   height: 100px;
   cursor: pointer;
