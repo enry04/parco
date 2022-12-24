@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Creato il: Dic 24, 2022 alle 11:06
+-- Creato il: Dic 24, 2022 alle 16:03
 -- Versione del server: 10.4.27-MariaDB
 -- Versione PHP: 8.0.25
 
@@ -20,6 +20,32 @@ SET time_zone = "+00:00";
 --
 -- Database: `parco`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Struttura della tabella `tAnimale`
+--
+
+CREATE TABLE `tAnimale` (
+  `id` int(11) NOT NULL,
+  `idParco` int(30) NOT NULL,
+  `idSpecieFauna` int(30) NOT NULL,
+  `generazione` varchar(30) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `sesso` varchar(30) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `annoNascita` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Struttura della tabella `tFamigliaFlora`
+--
+
+CREATE TABLE `tFamigliaFlora` (
+  `id` int(11) NOT NULL,
+  `nome` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -140,9 +166,46 @@ CREATE TABLE `tSpecieFauna` (
   `stato` varchar(30) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+-- --------------------------------------------------------
+
+--
+-- Struttura della tabella `tSpecieFlora`
+--
+
+CREATE TABLE `tSpecieFlora` (
+  `id` int(11) NOT NULL,
+  `nome` varchar(30) NOT NULL,
+  `idFamigliaFlora` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Struttura della tabella `tVegetale`
+--
+
+CREATE TABLE `tVegetale` (
+  `id` int(11) NOT NULL,
+  `idParco` int(11) NOT NULL,
+  `idSpecieFlora` int(11) NOT NULL,
+  `stagioneFioritura` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
 --
 -- Indici per le tabelle scaricate
 --
+
+--
+-- Indici per le tabelle `tAnimale`
+--
+ALTER TABLE `tAnimale`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indici per le tabelle `tFamigliaFlora`
+--
+ALTER TABLE `tFamigliaFlora`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indici per le tabelle `tOrdineAppartenenzaFauna`
@@ -169,8 +232,26 @@ ALTER TABLE `tSpecieFauna`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indici per le tabelle `tVegetale`
+--
+ALTER TABLE `tVegetale`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT per le tabelle scaricate
 --
+
+--
+-- AUTO_INCREMENT per la tabella `tAnimale`
+--
+ALTER TABLE `tAnimale`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT per la tabella `tFamigliaFlora`
+--
+ALTER TABLE `tFamigliaFlora`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT per la tabella `tOrdineAppartenenzaFauna`
@@ -195,6 +276,12 @@ ALTER TABLE `tRegione`
 --
 ALTER TABLE `tSpecieFauna`
   MODIFY `id` int(30) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT per la tabella `tVegetale`
+--
+ALTER TABLE `tVegetale`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
