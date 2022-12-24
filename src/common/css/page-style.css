@@ -1,41 +1,47 @@
-*{
-    margin: 0;
-    padding: 0;
-    font-family: natural-font;
+* {
+  margin: 0;
+  padding: 0;
+  font-family: natural-font;
 }
 
-body{
-    height: 100vh;
-    background-color: #ECF39E;
+body {
+  height: 100vh;
+  background-color: #ecf39e;
 }
 
-h1{
-    font-size: 35px;
+h1 {
+  font-size: 35px;
+  color: #132a13;
+  text-shadow: 0px 4px 4px rgba(42,0,25,0.25);
 }
 
-.header-container{
-    
+.header-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
+  margin-top: 20px;
 }
 
-.logo-container{
-    background: url("../images/icon-logo.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    width: 100px;
-    height: 100px;
+.logo-container {
+  background: url("../images/icon-logo.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 100px;
+  height: 100px;
 }
 
-.hamburger-container{
-    background: url("../images/icon-hamburger.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    width: 100px;
-    height: 100px;
+.hamburger-container {
+  background: url("../images/icon-hamburger.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 100px;
+  height: 100px;
 }
 
 @font-face {
-    font-family: natural-font;
-    src: url("../fonts/JotiOne-Regular.ttf");
+  font-family: natural-font;
+  src: url("../fonts/JotiOne-Regular.ttf");
 }
