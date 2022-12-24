@@ -6,7 +6,7 @@
 
 body {
   height: 100vh;
-  background-color: #ecf39e;
+  background-color: #f2e8cf;
 }
 
 h1 {
@@ -28,8 +28,8 @@ h1 {
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-  width: 100px;
-  height: 100px;
+  width: 125px;
+  height: 125px;
 }
 
 .hamburger-container {
