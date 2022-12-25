@@ -5,7 +5,7 @@
                     <a <?= ($page == "main")? $active : '' ?> class="header-option" href="../main-page/main-page.php">Home</a>
                 </h3>
                 <h3>
-                    <a <?= ($page == "contact-us")? $active : '' ?> class="header-option" href="../contact-us-page/contact-us-page.php">Contatti</a>
+                    <a <?= ($page == "contact-us")? $active : '' ?> class="header-option" href="../contact-us-page/contact-us-page.php">Contattaci</a>
                 </h3>
             </div>
             <div class="logo-container"></div>
