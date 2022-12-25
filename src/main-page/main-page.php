@@ -20,7 +20,7 @@
         <div class="main-container">
             <div class="text-container">
                 <h4>Benvenuto nel sito del Ministero <br>dell' ambiente! </h4>
-                <h5>Offriamo la possibilità di visualizzare gli<br>
+                <h5 style="text-shadow: none;">Offriamo la possibilità di visualizzare gli<br>
                     animali e i vegetali presenti in ogni <br>
                     parco italiano!<br>
                     Il sito è costantemente aggiornato <br>
