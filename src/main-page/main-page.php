@@ -8,6 +8,8 @@
     <title>Ministero dell' ambiente</title>
     <link rel="stylesheet" href="../common/css/page-style.css">
     <link rel="stylesheet" href="./css/main-page-style.css">
+    <link rel="icon" href="../common/images/icons/icon-logo.svg">
+
 </head>
 
 <body>

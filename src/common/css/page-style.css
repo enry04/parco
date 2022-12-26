@@ -7,13 +7,13 @@
 body {
   height: 100vh;
   background-color: #f2e8cf;
-  margin: 0 2%;
+  margin: 0 4%;
 }
 
 header,
 main,
 footer {
-  margin: 0 2% 200px;
+  margin: 0 0 200px;
 }
 
 h1,
