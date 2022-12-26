@@ -9,3 +9,21 @@ header{
     align-items: center;
     gap: 60px;
 }
+
+.select-container{
+    width: 200px;
+    height: 46px;
+    position: relative;
+}
+
+.select-container select{
+    display: none;
+}
+
+.option-container{
+
+}
+
+.hide{
+    display: none;
+}
