@@ -73,7 +73,8 @@ class SelectManager {
             this.currentOptionValue = event.target.id;
             this.setActiveOption();
           } else {
-            for (let i = 0; i < this.elements.selectElement.length; i++) {
+            for (let i = 1; i < this.elements.selectElement.length; i++) {
+                if(this.elements.optionsContainer.children[i])
                 this.elements.optionsContainer.children[i].classList.toggle("hide", false);
             }
           }
