@@ -1,35 +1,43 @@
-header{
-    margin-bottom: 150px;
+header {
+  margin-bottom: 150px;
 }
 
-.regions-container{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 60px;
+.regions-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
 }
 
-.select-container{
-    width: 200px;
-    height: 46px;
-    position: relative;
+.select-container {
+  position: relative;
+  width: 200px;
+  height: 36px;
 }
 
-.select-container select{
-    display: none;
+.select-container select {
+  display: none;
 }
 
-.option-container{
-    border: solid 1px black;
-    text-align: center;
-    cursor: pointer;
+.option-container {
+  border: solid 1px #132a13;
+  text-align: center;
+  cursor: pointer;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.options-container{
-
+.options-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
 }
 
-.hide{
-    display: none;
+.hide {
+  display: none;
 }

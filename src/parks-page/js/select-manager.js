@@ -73,9 +73,13 @@ class SelectManager {
             this.currentOptionValue = event.target.id;
             this.setActiveOption();
           } else {
-            for (let i = 1; i < this.elements.selectElement.length; i++) {
-                if(this.elements.optionsContainer.children[i])
-                this.elements.optionsContainer.children[i].classList.toggle("hide", false);
+            for (let i = 0; i < this.elements.selectElement.length; i++) {
+                if(this.elements.optionsContainer.children[i].classList.contains("hide") || this.elements.optionsContainer.children[i].id == this.currentOptionValue) {
+                  this.elements.optionsContainer.children[i].classList.toggle("hide", false);
+                }else{
+                  this.elements.optionsContainer.children[i].classList.toggle("hide", true);
+                }
+                
             }
           }
           console.log(this.currentOptionValue);
