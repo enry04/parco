@@ -28,6 +28,11 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: transparent 0.5;
+}
+
+.option-container:hover {
+  color: #4f772d;
 }
 
 .options-container {

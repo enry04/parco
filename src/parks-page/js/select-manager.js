@@ -86,6 +86,14 @@ class SelectManager {
         }
       );
     }
+    // document.addEventListener("click", () => {
+    //   for (let i = 0; i < this.elements.selectElement.length; i++) {
+    //     if(!this.elements.optionsContainer.children[i].classList.contains("hide") && this.elements.optionsContainer.children[i].id != this.currentOptionValue) {
+    //       this.elements.optionsContainer.children[i].classList.toggle("hide", true);
+    //     }
+        
+    // }
+    // });
   }
 }
 
