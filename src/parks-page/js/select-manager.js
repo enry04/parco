@@ -10,7 +10,6 @@ class SelectManager {
   init() {
     this.initElements();
     this.readOptions();
-    this.initEventListeners();
   }
 
   initElements() {
@@ -49,18 +48,40 @@ class SelectManager {
       this.elements.optionsContainer.appendChild(div);
     }
     this.setActiveOption();
+    this.initEventListeners();
   }
 
   setActiveOption() {
     for (let i = 0; i < this.elements.selectElement.length; i++) {
-        if(this.elements.selectElement[i].value == this.currentOptionValue){
-            let currentDiv = this.elements.optionsContainer.querySelector();
-            currentDiv.classList.toggle("hide", false);
-        }
+      let currentDiv = this.elements.optionsContainer.querySelector(
+        `[id='${i}']`
+      );
+      if (currentDiv.id == this.currentOptionValue) {
+        currentDiv.classList.toggle("hide", false);
+      } else {
+        currentDiv.classList.toggle("hide", true);
+      }
     }
   }
 
-  initEventListeners() {}
+  initEventListeners() {
+    for (let i = 0; i < this.elements.selectElement.length; i++) {
+      this.elements.optionsContainer.children[i].addEventListener(
+        "click",
+        (event) => {
+          if (this.currentOptionValue != event.target.id) {
+            this.currentOptionValue = event.target.id;
+            this.setActiveOption();
+          } else {
+            for (let i = 0; i < this.elements.selectElement.length; i++) {
+                this.elements.optionsContainer.children[i].classList.toggle("hide", false);
+            }
+          }
+          console.log(this.currentOptionValue);
+        }
+      );
+    }
+  }
 }
 
 export default SelectManager;
