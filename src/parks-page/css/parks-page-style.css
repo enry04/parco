@@ -8,6 +8,7 @@ header {
   justify-content: center;
   align-items: center;
   gap: 60px;
+  margin-bottom: 200px;
 }
 
 .select-container {
@@ -45,4 +46,11 @@ header {
 
 .hide {
   display: none;
+}
+
+.parks-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
 }

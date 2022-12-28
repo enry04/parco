@@ -1,4 +1,5 @@
 import FetchUtil from "../../common/js/fetch-util.js";
+import ParksManager from "./parks-manager.js";
 
 class SelectManager {
   constructor(parentElement) {
@@ -79,21 +80,14 @@ class SelectManager {
                 }else{
                   this.elements.optionsContainer.children[i].classList.toggle("hide", true);
                 }
-                
             }
           }
-          console.log(this.currentOptionValue);
+          if(this.currentOptionValue != 0){
+            
+          }
         }
       );
     }
-    // document.addEventListener("click", () => {
-    //   for (let i = 0; i < this.elements.selectElement.length; i++) {
-    //     if(!this.elements.optionsContainer.children[i].classList.contains("hide") && this.elements.optionsContainer.children[i].id != this.currentOptionValue) {
-    //       this.elements.optionsContainer.children[i].classList.toggle("hide", true);
-    //     }
-        
-    // }
-    // });
   }
 }
 

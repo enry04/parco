@@ -25,6 +25,25 @@
             </select>
         </div>
     </div>
+    <div class="parks-container">
+        <h4 class="region-text">Parchi in Friuli Venezia Giulia:</h4>
+        <div class="item-container">
+            <div class="park-image-container"></div>
+            <div class="info-container">
+                <h5 class="park-title-text">Parco gogo ciao</h5>
+                <h6 class="park-description-text">DJIICNICNkvmskvsvksvksvdkqnedknkfknfkwnfkwnfkwefkwnfkwnfkwfkwfkwfn</h6>
+                <input type="button" value="Dettagli" class="details-btn">
+            </div>
+        </div>
+        <div class="item-container">
+            <div class="park-image-container"></div>
+            <div class="info-container">
+                <h5 class="park-title-text">Parco gogo ciao</h5>
+                <h6 class="park-description-text">DJIICNICNkvmskvsvksvksvdkqnedknkfknfkwnfkwnfkwefkwnfkwnfkwfkwfkwfn</h6>
+                <input type="button" value="Dettagli" class="details-btn">
+            </div>
+        </div>
+    </div>
     <script src="./js/parks-view.js" type="module"></script>
 </body>
 
