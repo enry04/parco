@@ -11,41 +11,26 @@ header {
   margin-bottom: 200px;
 }
 
-.select-container {
-  position: relative;
+select {
   width: 200px;
-  height: 36px;
-}
-
-.select-container select {
-  display: none;
-}
-
-.option-container {
-  border: solid 1px #132a13;
+  height: 40px;
+  background: transparent;
   text-align: center;
+  outline: 0;
   cursor: pointer;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: transparent 0.5;
+  border-radius: 5px;
+  color: #132a13;
 }
 
-.option-container:hover {
+select:hover,
+select > option:hover{
   color: #4f772d;
 }
 
-.options-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-}
-
-.hide {
-  display: none;
+select > option {
+  color: #132a13;
+  border:  solid 1px;
+  background-color: #28292d;
 }
 
 .parks-container {
