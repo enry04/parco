@@ -18,7 +18,8 @@
     require("../common/php/header.php");
     ?>
     <div class="regions-container">
-        <h5>Seleziona regione del parco:</h5>
+        <h5>Seleziona regione <br>
+            del parco:</h5>
         <div class="select-container">
             <select>
                 <option value="0">-- Seleziona regione --</option>
