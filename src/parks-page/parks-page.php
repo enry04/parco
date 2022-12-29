@@ -32,7 +32,7 @@
             <div class="park-image-container"></div>
             <div class="info-container">
                 <h5 class="park-title-text">Parco gogo ciao</h5>
-                <h6 class="park-description-text">DJIICNICNkvmskvsvksvksvdkqnedknkfknfkwnfkwnfkwefkwnfkwnfkwfkwfkwfn</h6>
+                <h6 class="park-description-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ut dui sed metus ornare posuere nec ut nisl. Integer rhoncus tellus in tincidunt porttitor. Suspendisse vulputate, magna sed congue varius, quam neque bibendum tellus, ut pulvinar massa turpis vitae neque. Duis elementum lectus in convallis consectetur. Maecenas gravida lectus a metus laoreet, nec convallis leo vehicula. Integer sit amet dictum leo. Maecenas ultricies bibendum sapien sit amet porta. Aenean egestas, sapien id tempor sodales, arcu est vulputate enim, id ultricies lacus neque et magna. In ac purus id elit hendrerit varius at sodales nunc. Nulla facilisi. Maecenas vitae odio sit amet nulla finibus dapibus. Aenean ex est, cursus sit amet tempor vel, ultricies at nulla. Cras id feugiat orci, a fringilla arcu. Quisque pellentesque sem ac turpis sagittis lobortis.</h6>
                 <input type="button" value="Dettagli" class="details-btn">
             </div>
         </div>
@@ -40,7 +40,7 @@
             <div class="park-image-container"></div>
             <div class="info-container">
                 <h5 class="park-title-text">Parco gogo ciao</h5>
-                <h6 class="park-description-text">DJIICNICNkvmskvsvksvksvdkqnedknkfknfkwnfkwnfkwefkwnfkwnfkwfkwfkwfn</h6>
+                <h6 class="park-description-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ut dui sed metus ornare posuere nec ut nisl. Integer rhoncus tellus in tincidunt porttitor. Suspendisse vulputate, magna sed congue varius, quam neque bibendum tellus, ut pulvinar massa turpis vitae neque. Duis elementum lectus in convallis consectetur. Maecenas gravida lectus a metus laoreet, nec convallis leo vehicula. Integer sit amet dictum leo. Maecenas ultricies bibendum sapien sit amet porta. Aenean egestas, sapien id tempor sodales, arcu est vulputate enim, id ultricies lacus neque et magna. In ac purus id elit hendrerit varius at sodales nunc. Nulla facilisi. Maecenas vitae odio sit amet nulla finibus dapibus. Aenean ex est, cursus sit amet tempor vel, ultricies at nulla. Cras id feugiat orci, a fringilla arcu. Quisque pellentesque sem ac turpis sagittis lobortis.</h6>
                 <input type="button" value="Dettagli" class="details-btn">
             </div>
         </div>

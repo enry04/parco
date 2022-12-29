@@ -23,13 +23,14 @@ select {
 }
 
 select:hover,
-select > option:hover{
+select > option:hover {
   color: #4f772d;
+  border: #4f772d 1px solid;
 }
 
 select > option {
   color: #132a13;
-  border:  solid 1px;
+  border: solid 1px;
   background-color: #28292d;
 }
 
@@ -38,4 +39,50 @@ select > option {
   justify-content: center;
   align-items: flex-start;
   flex-direction: column;
+  row-gap: 100px;
+}
+
+.item-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.park-image-container {
+  background: url("../../common/images/parks-images/parco-arcobaleno.jpeg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 500px;
+  height: 350px;
+  border-radius: 10px;
+}
+
+.info-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  gap: 20px;
+}
+
+.park-description-text {
+  max-width: 800px;
+  text-align: center;
+}
+
+.details-btn{
+  background: transparent;
+  outline: 0;
+  border: solid 1px #132a13;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 6px 10px;
+  border-radius: 10px;
+}
+
+.details-btn:hover{
+  color: #4f772d;
+  border: #4f772d 1px solid;
 }
