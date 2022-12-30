@@ -19,10 +19,23 @@ await selectData.forEach((optionValue) => {
 });
 
 const parksParentElement = document.querySelector(".parks-container");
-
+let parksManager = new ParksManager(parksParentElement);
 selectElement.addEventListener("change", (event) => {
-    if(event.target.value != 0){
-        let parksManager = new ParksManager(parksParentElement, event.target.value);
-        parksManager.init();
-    }
+  if (event.target.value != 0) {
+    parksManager.init();
+    parksManager.setRegionId(event.target.value);
+    let data = {
+      currentId: event.target.value,
+    };
+    FetchUtil.postData("./php/read-parks.php", data).then((response) => {
+      if (response.status == "success") {
+        console.log(response.data);
+        
+      } else {
+        console.log(response.status);
+      }
+    });
+  } else {
+    parksManager.reset();
+  }
 });

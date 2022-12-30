@@ -50,7 +50,6 @@ select > option {
 }
 
 .park-image-container {
-  background: url("../../common/images/parks-images/parco-arcobaleno.jpeg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
