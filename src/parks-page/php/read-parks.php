@@ -5,7 +5,13 @@ require("../../common/php/connection.php");
 $mySql = new ConnectionMySQL();
 $pdo = $mySql->getConnection();
 
-$query = $pdo->query("SELECT * FROM tRegione ORDER BY nome");
+$json = file_get_contents("php://input");
+$data = json_decode($json);
+
+$regionId = $data->regionId;
+
+$query = $pdo->prepare("SELECT tParco.nome AS nomeParco, tParco.*, tRegione.* FROM tParco INNER JOIN tRegione ON tParco.idRegione = tRegione.id WHERE idRegione =:regionId ORDER BY tParco.nome");
+$query->execute(['regionId' => $regionId]);
 $dataList = $query->fetchAll();
 $result = null;
 

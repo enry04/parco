@@ -54,10 +54,10 @@ select > option {
   background-repeat: no-repeat;
   background-size: cover;
   width: 500px;
-  height: 350px;
+  height: 370px;
   border-radius: 10px;
   min-width: 450px;
-  min-height: 300px;
+  min-height: 320px;
 }
 
 .info-container {

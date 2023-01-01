@@ -28,7 +28,6 @@
     </div>
     <div class="parks-container">
         <h4 class="region-text"></h4>
-        </div>
     </div>
     <script src="./js/parks-view.js" type="module"></script>
 </body>
