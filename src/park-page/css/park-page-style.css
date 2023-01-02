@@ -1,0 +1,23 @@
+.search-bar-container {
+  position: relative;
+}
+
+.search-bar {
+  outline: none;
+  border: solid 1px #132a13;
+  background: transparent;
+  height: 50px;
+  width: 300px;
+  padding: 0px 10px;
+  border-radius: 25px;
+}
+
+.search-bar:hover {
+  border-color: #31572c;
+  color: #31572c;
+}
+
+::placeholder {
+  color: #132a13;
+  font-size: 16px;
+}

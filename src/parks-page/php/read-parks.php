@@ -10,7 +10,7 @@ $data = json_decode($json);
 
 $regionId = $data->regionId;
 
-$query = $pdo->prepare("SELECT tParco.nome AS nomeParco, tParco.*, tRegione.* FROM tParco INNER JOIN tRegione ON tParco.idRegione = tRegione.id WHERE idRegione =:regionId ORDER BY tParco.nome");
+$query = $pdo->prepare("SELECT tParco.nome AS nomeParco, tParco.id AS idParco, tParco.*, tRegione.* FROM tParco INNER JOIN tRegione ON tParco.idRegione = tRegione.id WHERE idRegione =:regionId ORDER BY tParco.nome");
 $query->execute(['regionId' => $regionId]);
 $dataList = $query->fetchAll();
 $result = null;

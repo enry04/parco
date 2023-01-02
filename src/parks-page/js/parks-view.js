@@ -33,7 +33,7 @@ selectElement.addEventListener("change", (event) => {
         parksData.forEach((parkData) => {
           let parksManager = new ParksManager(parksParentElement);
           parksManager.init();
-          parksManager.setId(parkData["id"]);
+          parksManager.setId(parkData["idParco"]);
           parksManager.setRegionText(parkData["nome"]);
           parksManager.setImage("../common/" + parkData["immagine"]);
           parksManager.setParkTitle(parkData["nomeParco"]);

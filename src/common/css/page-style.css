@@ -106,6 +106,10 @@ a {
   background-color: #31572c;
 }
 
+.hide{
+  display: none;
+}
+
 @font-face {
   font-family: natural-font;
   src: url("../fonts/JotiOne-Regular.ttf");

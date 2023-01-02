@@ -28,7 +28,12 @@ class ParksManager {
   }
 
   initEventListeners() {
-    this.elements.detailsBtn.addEventListener("click", (event) => {});
+    this.elements.detailsBtn.addEventListener("click", (event) => {
+      let valueToSend = new URLSearchParams();
+      valueToSend.append("id", this.currentId);
+      location.href = "../park-page/park-page.php?" + valueToSend.toString();
+
+    });
   }
 
   createElement(){
