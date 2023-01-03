@@ -48,7 +48,8 @@ OrdineAppartenenza (textBar);
 specie (textBar);
 sesso (Select);
 generazione (select);
-stato(in salute)(textBar);
+stato(in salute)(select);
+età(number);
 
 Flora:
 Famiglia(textBar);
