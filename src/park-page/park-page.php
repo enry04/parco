@@ -17,9 +17,19 @@
     $active = 'class="active-page"';
     require("../common/php/header.php");
     ?>
-    <div class="search-bar-container">
-        <input type="text" placeholder="Ricerca specie animale..." class="search-bar">
+
+    <h4>La fauna nel parco:</h4>
+
+    <div class="animals-container">
+
     </div>
+
+    <div class="add-record-container">
+        <h6 class="add-text">
+            Avvistato un<br> nuovo esemplare?<br><a href="../add-record-page/add-record-page.php">clicca qui</a>
+        </h6>
+    </div>
+
 </body>
 
 </html>
