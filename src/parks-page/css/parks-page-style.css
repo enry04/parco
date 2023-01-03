@@ -19,7 +19,6 @@ select {
   outline: 0;
   cursor: pointer;
   border-radius: 5px;
-  color: #132a13;
 }
 
 select:hover,
@@ -30,8 +29,8 @@ select > option:hover {
 
 select > option {
   color: #132a13;
-  border: solid 1px;
-  background-color: #28292d;
+  border: solid 1px #132a13;
+  background-color: #f2e8cf;
 }
 
 .parks-container {
@@ -44,7 +43,7 @@ select > option {
 
 .item-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
   width: 100%;
 }
