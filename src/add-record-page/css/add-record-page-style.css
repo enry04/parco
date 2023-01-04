@@ -18,6 +18,13 @@ body {
   height: 70px;
 }
 
+.back-container:hover{
+  background: url("../../common/images/icons/icon-back-hover.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
 .main-container {
   display: flex;
   justify-content: center;
@@ -25,7 +32,7 @@ body {
   flex-direction: column;
   padding: 50px;
   border-radius: 10px;
-  border: solid 1px #132a13;
+  border: solid 1px #001e1d;
   gap: 60px;
 }
 
@@ -70,23 +77,26 @@ select {
   width: 270px;
   height: 40px;
   background-color: transparent;
+  color: #abd1c6;
   outline: 0;
   text-align: center;
   cursor: pointer;
   border-radius: 5px;
-  border: solid 1px #132a13;
+  border: solid 1px #001e1d;
 }
 
 select:hover,
 select > option:hover {
-  color: #4f772d;
-  border: #4f772d 1px solid;
+  box-shadow: 0 0 5px #001e1d;
+  border: #001e1d 1px solid;
+  color: #fffffe;
 }
 
 select > option {
-  color: #132a13;
-  border: solid 1px #132a13;
-  background-color: #f2e8cf;
+  color: #abd1c6;
+  background-color: #004643;
+  border: solid 1px #001e1d;
+
 }
 
 input[type="text"] {
@@ -96,7 +106,7 @@ input[type="text"] {
   background: transparent;
   outline: 0;
   border: solid 1px #132a13;
-  color: #132a13;
+  color: #fffffe;
   border-radius: 5px;
   font-size: 15px;
 }
@@ -108,7 +118,7 @@ input[type="number"] {
   background: transparent;
   outline: 0;
   border: solid 1px #132a13;
-  color: #132a13;
+  color: #fffffe;
   border-radius: 5px;
   font-size: 15px;
 }
@@ -123,16 +133,16 @@ input::-webkit-inner-spin-button {
 input:hover,
 input:checked,
 input:valid {
-  border: solid 1px #4f772d;
+  border: solid 1px #001e1d;
 }
 
 ::placeholder {
-  color: #132a13;
+  color: #abd1c6;
 }
 
 input:focus::placeholder,
 input:hover::placeholder {
-  color: #4f772d;
+  color: #fffffe;
 }
 
 input[type="submit"] {
@@ -140,15 +150,15 @@ input[type="submit"] {
   height: 40px;
   cursor: pointer;
   padding: 0 10px;
-  color: #132a13;
-  background: transparent;
-  border: solid 1px #132a13;
+  color: #001e1d;
+  background: #f9bc60;
+  border: solid 1px #001e1d;
   border-radius: 5px;
   font-size: 15px;
 }
 
 input[type="submit"]:hover {
-  background-color: #6a994e;
+  box-shadow: 0 0 5px #001e1d;
 }
 
 .submit-row {

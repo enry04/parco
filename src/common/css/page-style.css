@@ -1,7 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: natural-font;
+  font-family: poppins;
 }
 
 body {
@@ -65,7 +65,7 @@ a {
 
 .header-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   flex-direction: row;
   margin-top: 20px;
@@ -73,10 +73,11 @@ a {
 
 .right-header-container,
 .left-header-container {
+  width: 50%;
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 55px;
+  justify-content: space-evenly;
 }
 
 .logo-container {
@@ -114,6 +115,6 @@ a {
 }
 
 @font-face {
-  font-family: natural-font;
-  src: url("../fonts/JotiOne-Regular.ttf");
+  font-family: poppins;
+  src: url("../fonts/Poppins-Regular.ttf");
 }

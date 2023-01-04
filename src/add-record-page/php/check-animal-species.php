@@ -9,22 +9,22 @@ $json = file_get_contents("php://input");
 $data = json_decode($json);
 
 $species = $data->species;
-$order = $data->$order;
+$orderId = $data->orderId;
 
-$query = $pdo->prepare("");
-$query->execute(["order" => $order]);
-$data = $query->fetch();
+$query = $pdo->prepare("SELECT * FROM tSpecieFauna WHERE nome=:species AND idOrdineAppartenenzaFauna=:orderId");
+$query->execute(["species" => $species, "orderId" => $orderId]);
+$speciesData = $query->fetch();
 $result = null;
 
-if ($data == null) {
+if ($speciesData != null) {
     $result = array(
-        "data" => null,
-        "status" => "success",
+        "data" => json_encode($speciesData),
+        "status" => "already present",
     );
 } else {
     $result = array(
         "data" => null,
-        "status" => "already present",
+        "status" => "not present",
     );
 }
 

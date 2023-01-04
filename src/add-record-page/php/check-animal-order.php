@@ -12,18 +12,18 @@ $order = $data->order;
 
 $query = $pdo->prepare("SELECT * FROM tOrdineAppartenenzaFauna WHERE nome=:order");
 $query->execute(["order" => $order]);
-$data = $query->fetch();
+$orderData = $query->fetch();
 $result = null;
 
-if ($data == null) {
+if ($orderData != null) {
     $result = array(
-        "data" => null,
-        "status" => "success",
+        "data" => json_encode($orderData),
+        "status" => "already present",
     );
 } else {
     $result = array(
         "data" => null,
-        "status" => "already present",
+        "status" => "not present",
     );
 }
 

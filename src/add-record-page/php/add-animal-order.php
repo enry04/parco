@@ -15,10 +15,13 @@ try {
 
     $query = $pdo->prepare("INSERT INTO tOrdineAppartenenzaFauna (nome) VALUES (:ordineAppartenenza)");
     $query->execute(["ordineAppartenenza" => $order]);
+    $getIdQuery = $pdo->query("SELECT LAST_INSERT_ID() FROM tOrdineAppartenenzaFauna");
+    $orderData = $getIdQuery->fetch();
     $result = array(
-        'data' => null,
+        'data' => json_encode($orderData),
         'status' => "success",
     );
+
 } catch (PDOException $e) {
     $result = array(
         'data' => $e,

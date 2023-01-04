@@ -47,54 +47,56 @@ class FormManager {
             }
         })
 
-        this.elements.animalElements.animalForm.addEventListener("submit", (event) => {
+        this.elements.animalElements.animalForm.addEventListener("submit", async (event) => {
             event.preventDefault();
-            let data = {
-                order: this.elements.animalElements.orderText.value,
-                species: this.elements.animalElements.animalspeciesText.value,
+            const orderData = {
+                order: data.order,
+            };
+            let orderId = null;
+            await FetchUtil.postData("./php/check-animal-order.php", orderData).then(async (response) => {
+                if (response.status == "already present") {
+                    let parseData = JSON.parse(response.data);
+                    orderId = parseData["id"];
+                } else {
+                    await FetchUtil.postData("./php/add-animal-order.php", orderData).then((response) => {
+                        if (response.status == "success") {
+                            let parseData = JSON.parse(response.data)
+                            orderId = parseData["LAST_INSERT_ID()"];
+                        } else {
+                            console.log(response.status);
+                        }
+                    });
+                }
+            });
+            const speciesData = {
+                orderId: orderId,
+                species: data.species,
+            }
+            let speciesId = null;
+            await FetchUtil.postData("./php/check-animal-species.php", speciesData).then(async (response) => {
+                if(response.status == "already present"){
+                    let parseData = JSON.parse(response.data);
+                    speciesId = parseData["id"];
+                }else{
+                    await FetchUtil.postData("./php/add-animal-species.php",speciesData).then((response) => {
+                        if(response.status == "success"){
+                            let parseData = JSON.parse(response.data);
+                            speciesId = parseData["LAST_INSERT_ID()"];
+                        }else{
+                            console.log(response.status);
+                        }
+                    });
+                }
+            });
+            const data = {
+                parkId: "",
+                speciesId: speciesId,
                 gender: this.elements.animalElements.genderSelect.value,
                 generation: this.elements.animalElements.generationSelect.value,
                 state: this.elements.animalElements.stateSelect.value,
                 age: this.elements.animalElements.ageNumber.value,
             }
 
-            let orderData = {
-                order: data.order,
-            };
-            FetchUtil.postData("./php/check-animal-order.php", orderData).then((response) => {
-                if (response.status == "success") {
-                    FetchUtil.postData("./php/add-animal-order.php", orderData).then((response) => {
-                        if (response.status != "success") {
-                            console.log(response.status);
-                        }
-                    })
-                } else {
-                    console.log(response.status);
-                }
-            });
-            let speciesData = {
-                species: data.species,
-                order: data.order,
-            }
-            FetchUtil.postData("./php/check-animal-species.php", speciesData).then((response) => {
-                if (response.status == "success") {
-                    FetchUtil.postData("./php/add-animal-species.php", speciesData).then((response) => {
-                        if (response.status != "success") {
-                            console.log(response.status);
-                        }
-                    })
-                } else {
-                    console.log(response.status);
-                }
-            })
-
-            // FetchUtil.postData("../php/add-animal.php", data).then((response) => {
-            //     if (response.status == "success") {
-            //         console.log(response.data);
-            //     } else {
-            //         console.log(response.status);
-            //     }
-            // });
         })
 
         this.elements.vegetableElements.vegetableForm.addEventListener("submit", (event) => {

@@ -14,7 +14,7 @@
 <body>
     <div class="back-container"></div>
     <div class="main-container">
-        <h5>Aggiungi un esemplare</h5>
+        <h5 style="color: #fffffe;">Aggiungi un esemplare</h5>
         <div class="items-container">
             <div class="input-container select-container">
                 <select class="exemplary-select">

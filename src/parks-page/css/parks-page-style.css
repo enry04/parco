@@ -19,18 +19,21 @@ select {
   outline: 0;
   cursor: pointer;
   border-radius: 5px;
+  background-color: #f9bc60;
+  color: #001e1d;
+  font-size: 14px;
 }
 
 select:hover,
 select > option:hover {
-  color: #4f772d;
-  border: #4f772d 1px solid;
+  box-shadow: 0 0 5px #001e1d;
+  border: #001e1d 1px solid;
 }
 
 select > option {
-  color: #132a13;
-  border: solid 1px #132a13;
-  background-color: #f2e8cf;
+  color: #001e1d;
+  border: solid 1px #001e1d;
+  background-color: #f9bc60;
 }
 
 .parks-container {
@@ -67,6 +70,10 @@ select > option {
   gap: 20px;
 }
 
+.park-title-text{
+  color: #fffffe;
+}
+
 .park-description-text {
   max-width: 800px;
   text-align: center;
@@ -74,16 +81,15 @@ select > option {
 }
 
 .details-btn{
-  background: transparent;
   outline: 0;
-  border: solid 1px #132a13;
+  background-color: #f9bc60;
   cursor: pointer;
   font-size: 18px;
   padding: 6px 10px;
   border-radius: 10px;
+  border: solid 1px #001e1d;
 }
 
 .details-btn:hover{
-  color: #4f772d;
-  border: #4f772d 1px solid;
+  box-shadow: 0 0 5px #001e1d;
 }
