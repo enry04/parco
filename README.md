@@ -31,13 +31,12 @@ gestire estinzione animali -> Se tot animali della stessa specie sono malati all
 
 **palette:**
 
-Dal più scuro al più chiaro
-
-#132a13
-#31572c
-#4f772d
-#90a955
-#ecf39e
+bg -> #004643
+Headline -> #fffffe
+paragraph -> #abd1c6
+btn -> #f9bc60
+btnText -> #001e1d
+border -> #001e1d
 
 **form**
 

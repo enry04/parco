@@ -26,6 +26,10 @@
   border-radius: 20px;
 }
 
+.first,.second,.third,.fourth{
+  border: 1px solid #001e1d;
+}
+
 .first {
   background: url("../../common/images/slide-images/first-image.jfif");
   background-position: center;
@@ -101,12 +105,12 @@
   margin: 5px 5px;
   cursor: pointer;
   display: inline-block;
-  background-color: #bbb;
+  background-color: #e8e4e6;
 }
 
 .selected,
 .dot:hover {
-  background-color: #717171;
+  background-color: #f9bc60;
 }
 
 .hide {
