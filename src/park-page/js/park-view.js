@@ -1,4 +1,6 @@
 import FetchUtil from "../../common/js/fetch-util.js";
+import AnimalsManager from "./animals-manager.js";
+import ShrubsManager from "./shrubs-manager.js";
 
 let dataToReceive = new URLSearchParams(window.location.search);
 let parkId = dataToReceive.get("parkId");
@@ -8,39 +10,74 @@ titleText.classList.toggle("hide", false);
 titleText.classList.toggle("active-page", true);
 titleText.innerHTML += parkName;
 document.querySelector(".logo-container").classList.toggle("hide", true);
-// const animalsData = {
-//   parkId: parseInt(parkId),
-// };
-// const noAnimalsText = document.querySelector(".no-animals-text");
-// FetchUtil.postData("./php/read-animals.php", animalsData).then((response) => {
-//   if (response.status == "success") {
-//     noAnimalsText.classList.toggle("hide", true);
-//   } else {
-//     noAnimalsText.classList.toggle("hide", false);
-//   }
-// });
-// let shrubsData = {
-//   parkId: parseInt(parkId),
-// };
-// const noShrubsText = document.querySelector(".no-shrubs-text");
-// FetchUtil.postData("./php/read-shrubs.php", shrubsData).then((response) => {
-//   if (response.status == "success") {
-//     noShrubsText.classList.toggle("hide", true);
-//   } else {
-//     noShrubsText.classList.toggle("hide", false);
-//   }
-// });
-// let pinesData = {
-//   parkId: parseInt(parkId),
-// };
-// const noPinesText = document.querySelector(".no-pines-text");
-// FetchUtil.postData("./php/read-pines.php", pinesData).then((response) => {
-//   if (response.status == "success") {
-//     noPinesText.classList.toggle("hide", true);
-//   } else {
-//     noPinesText.classList.toggle("hide", false);
-//   }
-// });
+const animalsData = {
+  parkId: parseInt(parkId),
+};
+const noAnimalsText = document.querySelector(".no-animals-text");
+const animalTable = document.querySelector(".animal-table");
+FetchUtil.postData("./php/read-animals.php", animalsData).then((response) => {
+  if (response.status == "success") {
+    noAnimalsText.classList.toggle("hide", true);
+    animalTable.classList.toggle("hide", false);
+    const animalsManager = new AnimalsManager(animalTable);
+    animalsManager.init();
+    let parseData = JSON.parse(response.data);
+    parseData.forEach((animalData) => {
+      animalsManager.setRowData(
+        animalData["idAnimale"],
+        animalData["nomeSpecie"],
+        animalData["nomeOrdine"],
+        animalData["generazione"],
+        animalData["sesso"],
+        animalData["stato"],
+        animalData["eta"]
+      );
+    });
+  } else {
+    noAnimalsText.classList.toggle("hide", false);
+    animalTable.classList.toggle("hide", true);
+  }
+});
+let shrubsData = {
+  parkId: parseInt(parkId),
+};
+const noShrubsText = document.querySelector(".no-shrubs-text");
+const shrubsTable = document.querySelector(".shrubs-table");
+FetchUtil.postData("./php/read-shrubs.php", shrubsData).then((response) => {
+  if (response.status == "success") {
+    noShrubsText.classList.toggle("hide", true);
+    shrubsTable.classList.toggle("hide", false);
+    const shrubsManager = new ShrubsManager(shrubsTable);
+    shrubsManager.init();
+    let parseData = JSON.parse(response.data);
+    parseData.forEach((shrubData) => {
+      shrubsManager.setRowData("arbusti", shrubData["nome"]);
+    });
+  } else {
+    noShrubsText.classList.toggle("hide", false);
+    shrubsTable.classList.toggle("hide", true);
+  }
+});
+let pinesData = {
+  parkId: parseInt(parkId),
+};
+const noPinesText = document.querySelector(".no-pines-text");
+const pinesTable = document.querySelector(".pines-table");
+FetchUtil.postData("./php/read-pines.php", pinesData).then((response) => {
+  if (response.status == "success") {
+    noPinesText.classList.toggle("hide", true);
+    pinesTable.classList.toggle("hide", false);
+    const pinesManager = new PinesManager(pinesTable);
+    pinesManager.init();
+    let parseData = JSON.parse(response.data);
+    parseData.forEach((pineData) => {
+      
+    });
+  } else {
+    noPinesText.classList.toggle("hide", false);
+    pinesTable.classList.toggle("hide", true);
+  }
+});
 const addRecordBtn = document.querySelector(".add-record-btn");
 addRecordBtn.addEventListener("click", () => {
   let dataToSend = new URLSearchParams();

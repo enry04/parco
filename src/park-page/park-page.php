@@ -21,9 +21,9 @@
     <h4>La fauna...</h4>
 
     <div class="animals-container">
-        <!-- <h4 class="no-animals-text hide">Non è stato avvistato nessun animale</h4> -->
+        <h4 class="no-animals-text hide">Non è stato avvistato nessun animale</h4>
         <table class="animal-table">
-            <thead>
+            <!-- <thead>
                 <tr>
                     <th>Codice</th>
                     <th>Specie</th>
@@ -72,7 +72,7 @@
                     <td>Malato</td>
                     <td>12</td>
                 </tr>
-            </tbody>
+            </tbody> -->
         </table>
     </div>
 
