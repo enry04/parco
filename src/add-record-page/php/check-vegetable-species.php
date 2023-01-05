@@ -8,11 +8,11 @@ $pdo = $mySql->getConnection();
 $json = file_get_contents("php://input");
 $data = json_decode($json);
 
-$orderId = $data->orderId;
+$familyId = $data->familyId;
 $species = $data->species;
 
-$query = $pdo->prepare("SELECT * FROM tSpecieFauna WHERE nome=:species AND idOrdineAppartenenzaFauna=:orderId");
-$query->execute(["species" => $species, "orderId" => $orderId]);
+$query = $pdo->prepare("SELECT * FROM tSpecieFlora WHERE nome=:species AND idFamigliaFlora=:familyId");
+$query->execute(["species" => $species, "familyId" => $familyId]);
 $speciesData = $query->fetch();
 $result = null;
 

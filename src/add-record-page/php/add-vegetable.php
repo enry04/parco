@@ -10,15 +10,12 @@ $data = json_decode($json);
 
 $parkId = $data->parkId;
 $speciesId = $data->speciesId;
-$gender = $data->gender;
-$generation = $data->generation;
-$state = $data->state;
-$age = $data->age;
+$season = $data->season;
 $result = null;
 
 try {
-    $query = $pdo->prepare("INSERT INTO tAnimale (idParco, idSpecieFauna, generazione, sesso, stato, eta) VALUES (:parkId, :speciesId, :generation, :gender, :state, :age)");
-    $query->execute(["parkId" => $parkId, "speciesId" => $speciesId, "gender" => $gender, "generation" => $generation, "state" => $state, "age" => $age]);
+    $query = $pdo->prepare("INSERT INTO tVegetale (idParco, idSpecieFlora, stagioneFioritura) VALUES (:parkId, :speciesId, :season)");
+    $query->execute(["parkId" => $parkId, "speciesId" => $speciesId, "season" => $season]);
     $result = array(
         'data' => null,
         'status' => "success",

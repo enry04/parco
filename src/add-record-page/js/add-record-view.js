@@ -16,6 +16,10 @@ await FetchUtil.postData("./php/read-families.php", {}).then((response) => {
     }
 });
 
+let dataToReceive = new URLSearchParams(window.location.search);
+let parkId = dataToReceive.get("parkId");
+console.log(parkId);
+
 const parentElement = document.querySelector(".main-container");
-const formManager = new FormManager(parentElement, selectData);
+const formManager = new FormManager(parentElement, selectData, parkId);
 formManager.init(); 

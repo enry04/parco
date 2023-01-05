@@ -26,10 +26,10 @@
 
     <div class="add-record-container">
         <h6 class="add-text">
-            Avvistato un<br> nuovo esemplare?<br><a href="../add-record-page/add-record-page.php">clicca qui</a>
+            Avvistato un<br> nuovo esemplare?<br><span class="add-record-btn">clicca qui</span>
         </h6>
     </div>
-
+    <script src="./js/park-view.js"></script>
 </body>
 
 </html>

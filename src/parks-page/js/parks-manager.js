@@ -30,7 +30,7 @@ class ParksManager {
   initEventListeners() {
     this.elements.detailsBtn.addEventListener("click", (event) => {
       let valueToSend = new URLSearchParams();
-      valueToSend.append("id", this.currentId);
+      valueToSend.append("currentId", this.currentId);
       location.href = "../park-page/park-page.php?" + valueToSend.toString();
 
     });

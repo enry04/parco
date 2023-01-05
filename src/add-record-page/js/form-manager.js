@@ -1,10 +1,11 @@
 import FetchUtil from "../../common/js/fetch-util.js";
 
 class FormManager {
-    constructor(parentElement, vegetableFamilies) {
+    constructor(parentElement, vegetableFamilies, parkId) {
         this.rootElement = parentElement;
         this.elements = {};
         this.vegetableFamilies = vegetableFamilies;
+        this.currentParkId = parkId;
     }
 
     init() {
@@ -50,7 +51,7 @@ class FormManager {
         this.elements.animalElements.animalForm.addEventListener("submit", async (event) => {
             event.preventDefault();
             const orderData = {
-                order: data.order,
+                order: this.elements.animalElements.orderText.value,
             };
             let orderId = null;
             await FetchUtil.postData("./php/check-animal-order.php", orderData).then(async (response) => {
@@ -70,7 +71,7 @@ class FormManager {
             });
             const speciesData = {
                 orderId: orderId,
-                species: data.species,
+                species: this.elements.animalElements.animalspeciesText.value,
             }
             let speciesId = null;
             await FetchUtil.postData("./php/check-animal-species.php", speciesData).then(async (response) => {
@@ -88,24 +89,57 @@ class FormManager {
                     });
                 }
             });
-            const data = {
-                parkId: "",
-                speciesId: speciesId,
+            const animalData = {
+                parkId: parseInt(this.currentParkId),
+                speciesId: parseInt(speciesId),
                 gender: this.elements.animalElements.genderSelect.value,
                 generation: this.elements.animalElements.generationSelect.value,
                 state: this.elements.animalElements.stateSelect.value,
-                age: this.elements.animalElements.ageNumber.value,
+                age: parseInt(this.elements.animalElements.ageNumber.value),
             }
+
+            console.log(animalData);
+
+            FetchUtil.postData("./php/add-animal.php", animalData).then((response) => {
+                if(response.status == "error"){
+                    console.log(response.data);
+                }
+            });
 
         })
 
-        this.elements.vegetableElements.vegetableForm.addEventListener("submit", (event) => {
+        this.elements.vegetableElements.vegetableForm.addEventListener("submit", async (event) => {
             event.preventDefault();
-            let data = {
-                family: this.elements.vegetableElements.familySelect.value,
-                season: this.elements.vegetableElements.seasonSelect.value,
-                species: this.elements.vegetableElements.vegetableSpeciesText.value
+            const speciesData = {
+                familyId: this.elements.vegetableElements.familySelect.value,
+                species: this.elements.vegetableElements.vegetableSpeciesText.value,
             }
+            let speciesId = null;
+            await FetchUtil.postData("./php/check-vegetable-species.php", speciesData).then(async (response) => {
+                if(response.status == "already present"){
+                    let parseData = JSON.parse(response.data);
+                    speciesId = parseData["id"];
+                }else {
+                    await FetchUtil.postData("./php/add-vegetable-species.php", speciesData).then(async (response) => {
+                        if(response.status == "success"){
+                            let parseData = JSON.parse(response.data);
+                            speciesId = parseData["LAST_INSERT_ID()"];
+                        }else{
+                            console.log(response.data);
+                        }
+                    });
+                }
+            });
+            const vegetableData = {
+                parkId: parseInt(this.currentParkId),
+                speciesId: parseInt(speciesId),
+                season: this.elements.vegetableElements.seasonSelect.value,
+            }
+            FetchUtil.postData("./php/add-vegetable.php", vegetableData).then((response) => {
+                if(response.status == "error"){
+                    console.log(response.data);
+                }
+            });
         })
     }
 
