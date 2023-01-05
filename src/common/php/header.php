@@ -8,7 +8,7 @@
                 <a <?= ($page == "contact-us") ? $active : '' ?> class="header-option" href="../contact-us-page/contact-us-page.php">Contattaci</a>
             </h3>
         </div>
-        <h3 class="current-park-text hide"></h3>
+        <h4 class="current-park-text"></h4>
         <div class="logo-container"></div>
         <div class="right-header-container">
             <h3>

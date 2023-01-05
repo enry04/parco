@@ -2,6 +2,7 @@ class ParksManager {
   constructor(parentElement) {
     this.rootElement = parentElement;
     this.currentId;
+    this.currentRegion;
     this.elements = {};
     const parser = new DOMParser();
     const parkTemplate =
@@ -16,9 +17,11 @@ class ParksManager {
   }
 
   initElements() {
-
     this.elements = {
-      regionText: this.rootElement.querySelector(".region-text") != null ? this.rootElement.querySelector(".region-text") : this.createElement(),
+      regionText:
+        this.rootElement.querySelector(".region-text") != null
+          ? this.rootElement.querySelector(".region-text")
+          : this.createElement(),
       image: this.template.querySelector(".park-image-container"),
       parkTitle: this.template.querySelector(".park-title-text"),
       parkDescription: this.template.querySelector(".park-description-text"),
@@ -30,13 +33,13 @@ class ParksManager {
   initEventListeners() {
     this.elements.detailsBtn.addEventListener("click", (event) => {
       let valueToSend = new URLSearchParams();
-      valueToSend.append("currentId", this.currentId);
+      valueToSend.append("parkId", this.currentId);
+      valueToSend.append("parkName", this.elements.parkTitle.textContent);
       location.href = "../park-page/park-page.php?" + valueToSend.toString();
-
     });
   }
 
-  createElement(){
+  createElement() {
     let element = document.createElement("h4");
     element.classList.toggle("region-text", true);
     this.rootElement.appendChild(element);
@@ -48,6 +51,7 @@ class ParksManager {
   }
 
   setRegionText(regionText) {
+    this.currentRegion = regionText;
     this.elements.regionText.textContent = "I parchi presenti in " + regionText;
   }
 
@@ -65,16 +69,16 @@ class ParksManager {
 
   static reset() {
     let parkElements = document.querySelectorAll(".item-container");
-    if( parkElements != null) {
-        parkElements.forEach((parkElement) => {
-            parkElement.remove();
-        })
+    if (parkElements != null) {
+      parkElements.forEach((parkElement) => {
+        parkElement.remove();
+      });
     }
   }
-  static removeRegionText(){
+  static removeRegionText() {
     let regionText = document.querySelector(".region-text");
-    if(regionText != null){
-        regionText.remove();
+    if (regionText != null) {
+      regionText.remove();
     }
   }
 }
