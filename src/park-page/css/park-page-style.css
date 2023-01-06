@@ -13,7 +13,8 @@
 .animals-container,
 .shrubs-container,
 .pines-container,
-.cubs-container {
+.cubs-container,
+.olders-container {
   position: relative;
   width: 100%;
   display: flex;

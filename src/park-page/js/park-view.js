@@ -33,7 +33,7 @@ FetchUtil.postData("./php/read-animals.php", animalsData).then((response) => {
         animalData["generazione"],
         animalData["sesso"],
         animalData["stato"],
-        animalData["eta"],
+        animalData["eta"] + " anni"
       );
     });
   } else {
@@ -53,7 +53,7 @@ FetchUtil.postData("./php/read-shrubs.php", shrubsData).then((response) => {
     const shrubsManager = new ShrubsManager(shrubsTable);
     shrubsManager.init();
     let parseData = JSON.parse(response.data);
-    let nShrubs = 0; 
+    let nShrubs = 0;
     parseData.forEach((shrubData) => {
       shrubsManager.setRowData("arbusti", shrubData["nome"]);
       nShrubs++;
@@ -89,44 +89,53 @@ FetchUtil.postData("./php/read-pines.php", pinesData).then((response) => {
 });
 const cubsData = {
   parkId: parkId,
-}
+};
 const noCubsText = document.querySelector(".no-cubs-text");
 const cubsTable = document.querySelector(".cubs-table");
 FetchUtil.postData("./php/read-cubs.php", cubsData).then((response) => {
-  if(response.status == "success"){
+  if (response.status == "success") {
     noCubsText.classList.toggle("hide", true);
     cubsTable.classList.toggle("hide", false);
     const cubsManager = new CubsManager(cubsTable);
     cubsManager.init();
     let parseData = JSON.parse(response.data);
     parseData.forEach((cubData) => {
-      cubsManager.setRowData(cubData["nome"], cubData["ordine"], cubData["nCuccioli"]);
+      cubsManager.setRowData(
+        cubData["nome"],
+        cubData["ordine"],
+        cubData["nCuccioli"]
+      );
     });
-  }else{
-    noCubsText.classList.toggle("hide",false);
+  } else {
+    noCubsText.classList.toggle("hide", false);
     cubsTable.classList.toggle("hide", true);
   }
 });
 let oldersData = {
   parkId: parkId,
-}
+};
 const noOldersText = document.querySelector(".no-olders-text");
 const oldersTable = document.querySelector(".olders-table");
-FetchUtil.postData("./php/read-olders.php",oldersData).then((response) => {
-  if(response.status == "success"){
-    noOldersText.classList.toggle("hide",true);
-    oldersTable.classList.toggle("hide",false);
+FetchUtil.postData("./php/read-olders.php", oldersData).then((response) => {
+  if (response.status == "success") {
+    noOldersText.classList.toggle("hide", true);
+    oldersTable.classList.toggle("hide", false);
     const oldersManager = new OldersManager(oldersTable);
     oldersManager.init();
     let parseData = JSON.parse(response.data);
+    console.log(parseData);
     parseData.forEach((olderData) => {
-      oldersManager.setRowData(olderData["nome"], olderData["ordine"], olderData["eta"]);
+      oldersManager.setRowData(
+        olderData["nome"],
+        olderData["order"],
+        olderData["eta"] + " anni"
+      );
     });
-  }else{
-    noOldersText.classList.toggle("hide",false);
-    oldersTable.classList.toggle("hide",false);
+  } else {
+    noOldersText.classList.toggle("hide", false);
+    oldersTable.classList.toggle("hide", true);
   }
-})
+});
 const addRecordBtn = document.querySelector(".add-record-btn");
 addRecordBtn.addEventListener("click", () => {
   let dataToSend = new URLSearchParams();
