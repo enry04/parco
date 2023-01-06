@@ -15,7 +15,7 @@ gestire estinzione animali -> Se tot animali della stessa specie sono malati all
 3. Calcolare e visualizzare il numero di nascite di un certo esemplare nell’arco di un anno di monitoraggio.
 4. Calcolare e visualizzare il numero totale di diverse specie di arbusti presenti nei vari parchi della regione. **√**
 5. Visualizzare quante specie diverse di pino sono presenti in ciascun parco. **√**
-6. Calcolare il numero medio dei cuccioli di ciascuna specie presenti in tutti i parchi della regione.
+6. Calcolare il numero medio dei cuccioli di ciascuna specie presenti in tutti i parchi della regione. 
 7. Visualizzare l’esemplare più anziano di ogni specie presente in un determinato parco.
 
 **DATABASE:**

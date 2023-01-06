@@ -2,14 +2,18 @@
   text-align: center;
 }
 
-/* .no-animals-text,
+ .no-animals-text,
 .no-shrubs-text,
-.no-pine-text {
-} */
+.no-pines-text,
+.no-cubs-text,
+.no-olders-text {
+  color: #e16162;
+} 
 
 .animals-container,
 .shrubs-container,
-.pines-container {
+.pines-container,
+.cubs-container {
   position: relative;
   width: 100%;
   display: flex;

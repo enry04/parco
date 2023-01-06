@@ -8,9 +8,9 @@ $pdo = $mySql->getConnection();
 $json = file_get_contents("php://input");
 $data = json_decode($json);
 
-$parkId = $data->parkId;
+$parkId= $data->parkId;
 
-$query = $pdo->prepare("SELECT tSpecieFauna.nome, tOrdineAppartenenzaFauna.nome AS ordine, COUNT(tSpecieFauna.nome) AS nCuccioli FROM tAnimale INNER JOIN tSpecieFauna ON tAnimale.idSpecieFauna = tSpecieFauna.id INNER JOIN tOrdineAppartenenzaFauna ON tSpecieFauna.idOrdineAppartenenzaFauna = tOrdineAppartenenzaFauna.id WHERE tAnimale.generazione = 'cucciolo' AND tAnimale.idParco =:parkId GROUP BY tSpecieFauna.nome");
+$query = $pdo->prepare("");
 $query->execute(["parkId" => $parkId]);
 $dataList = $query->fetchAll();
 $result = null;

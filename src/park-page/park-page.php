@@ -18,7 +18,7 @@
     require("../common/php/header.php");
     ?>
 
-    <h4>La fauna...</h4>
+    <h4>La fauna nel parco...</h4>
 
     <div class="animals-container">
         <h4 class="no-animals-text hide">Non è stato avvistato nessun animale</h4>
@@ -27,7 +27,7 @@
         </table>
     </div>
 
-    <h4>Gli arbusti...</h4>
+    <h4>Gli arbusti nel parco...</h4>
 
     <div class="shrubs-container">
         <h4 class="no-shrubs-text hide">Non ci sono arbusti in questo parco</h4>
@@ -39,7 +39,7 @@
         </footer>
     </div>
 
-    <h4>I pini...</h4>
+    <h4>I pini nel parco...</h4>
 
     <div class="pines-container">
         <h4 class="no-pines-text hide">Non ci sono pini in questo parco</h4>
@@ -60,7 +60,14 @@
         </table>
     </div>
 
-    <h4>Gli esemplari più anziani...</h4>
+    <h4>Gli esemplari più anziani di ogni specie...</h4>
+
+    <div class="olders-container">
+        <h4 class="no-olders-text hide">Non è stato avvistato nessun animale</h4>
+        <table class="olders-table">
+            
+        </table>
+    </div>
 
     <footer class="page-footer">
         <div class="add-record-container">

@@ -2,6 +2,8 @@ import FetchUtil from "../../common/js/fetch-util.js";
 import AnimalsManager from "./animals-manager.js";
 import ShrubsManager from "./shrubs-manager.js";
 import PinesManager from "./pines-manager.js";
+import CubsManager from "./cubs-manager.js";
+import OldersManager from "./olders-manager.js";
 
 let dataToReceive = new URLSearchParams(window.location.search);
 let parkId = dataToReceive.get("parkId");
@@ -88,11 +90,43 @@ FetchUtil.postData("./php/read-pines.php", pinesData).then((response) => {
 const cubsData = {
   parkId: parkId,
 }
-const cubsText = document.querySelector(".no-cubs-text");
+const noCubsText = document.querySelector(".no-cubs-text");
 const cubsTable = document.querySelector(".cubs-table");
 FetchUtil.postData("./php/read-cubs.php", cubsData).then((response) => {
-  console.log(response);
+  if(response.status == "success"){
+    noCubsText.classList.toggle("hide", true);
+    cubsTable.classList.toggle("hide", false);
+    const cubsManager = new CubsManager(cubsTable);
+    cubsManager.init();
+    let parseData = JSON.parse(response.data);
+    parseData.forEach((cubData) => {
+      cubsManager.setRowData(cubData["nome"], cubData["ordine"], cubData["nCuccioli"]);
+    });
+  }else{
+    noCubsText.classList.toggle("hide",false);
+    cubsTable.classList.toggle("hide", true);
+  }
 });
+let oldersData = {
+  parkId: parkId,
+}
+const noOldersText = document.querySelector(".no-olders-text");
+const oldersTable = document.querySelector(".olders-table");
+FetchUtil.postData("./php/read-olders.php",oldersData).then((response) => {
+  if(response.status == "success"){
+    noOldersText.classList.toggle("hide",true);
+    oldersTable.classList.toggle("hide",false);
+    const oldersManager = new OldersManager(oldersTable);
+    oldersManager.init();
+    let parseData = JSON.parse(response.data);
+    parseData.forEach((olderData) => {
+      oldersManager.setRowData(olderData["nome"], olderData["ordine"], olderData["eta"]);
+    });
+  }else{
+    noOldersText.classList.toggle("hide",false);
+    oldersTable.classList.toggle("hide",false);
+  }
+})
 const addRecordBtn = document.querySelector(".add-record-btn");
 addRecordBtn.addEventListener("click", () => {
   let dataToSend = new URLSearchParams();
