@@ -85,6 +85,14 @@ FetchUtil.postData("./php/read-pines.php", pinesData).then((response) => {
     pinesTable.classList.toggle("hide", true);
   }
 });
+const cubsData = {
+  parkId: parkId,
+}
+const cubsText = document.querySelector(".no-cubs-text");
+const cubsTable = document.querySelector(".cubs-table");
+FetchUtil.postData("./php/read-cubs.php", cubsData).then((response) => {
+  console.log(response);
+});
 const addRecordBtn = document.querySelector(".add-record-btn");
 addRecordBtn.addEventListener("click", () => {
   let dataToSend = new URLSearchParams();
