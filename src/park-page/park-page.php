@@ -23,56 +23,7 @@
     <div class="animals-container">
         <h4 class="no-animals-text hide">Non è stato avvistato nessun animale</h4>
         <table class="animal-table">
-            <!-- <thead>
-                <tr>
-                    <th>Codice</th>
-                    <th>Specie</th>
-                    <th>Ordine appartenenza</th>
-                    <th>Generazione</th>
-                    <th>Sesso</th>
-                    <th>Stato</th>
-                    <th>Età</th>
-
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>2</td>
-                    <td>Orso polare</td>
-                    <td>Mammifero</td>
-                    <td>Adulto</td>
-                    <td>Maschio</td>
-                    <td>Malato</td>
-                    <td>12</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Orso polare</td>
-                    <td>Mammifero</td>
-                    <td>Adulto</td>
-                    <td>Maschio</td>
-                    <td>Malato</td>
-                    <td>12</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Orso polare</td>
-                    <td>Mammifero</td>
-                    <td>Adulto</td>
-                    <td>Maschio</td>
-                    <td>Malato</td>
-                    <td>12</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Orso polare</td>
-                    <td>Mammifero</td>
-                    <td>Adulto</td>
-                    <td>Maschio</td>
-                    <td>Malato</td>
-                    <td>12</td>
-                </tr>
-            </tbody> -->
+            
         </table>
     </div>
 
@@ -83,16 +34,35 @@
         <table class="shrubs-table">
             
         </table>
+        <footer>
+            <h5 class="total-shrubs-text"></h5>
+        </footer>
     </div>
 
     <h4>I pini...</h4>
 
     <div class="pines-container">
         <h4 class="no-pines-text hide">Non ci sono pini in questo parco</h4>
-        <table class="pines-table"></table>
+        <table class="pines-table">
+
+        </table>
+        <footer>
+            <h5 class="total-pines-text"></h5>
+        </footer>
     </div>
 
-    <footer>
+    <h4>I cuccioli di ogni specie...</h4>
+
+    <div class="cubs-container">
+        <h4 class="no-cubs-text hide">Non ci sono cuccioli in questo parco</h4>
+        <table class="cubs-table">
+
+        </table>
+    </div>
+
+    <h4>Gli esemplari più anziani...</h4>
+
+    <footer class="page-footer">
         <div class="add-record-container">
             <h6 class="add-text">
                 Avvistato un<br> nuovo esemplare?<br><span class="add-record-btn">clicca qui</span>

@@ -17,6 +17,7 @@
   align-items: center;
   margin-top: 50px;
   margin-bottom: 100px;
+  flex-direction: column;
 }
 
 table {
@@ -64,7 +65,10 @@ table td {
   color: #abd1c6;
   font-size: 20px;
 }
-footer {
+
+
+
+.page-footer {
   display: flex;
   justify-content: flex-end;
   align-items: center;

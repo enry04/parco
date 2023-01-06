@@ -4,6 +4,7 @@ class PinesManager{
         this.headerValues = ["Famiglia", "Specie"];
         this.tHead = this.rootElement.createTHead();
         this.tBody = this.rootElement.createTBody();
+        this.totalText = document.querySelector(".total-pines-text");
     }
 
     init(){
@@ -26,6 +27,10 @@ class PinesManager{
             td.innerHTML = data[i];
             row.appendChild(td);
         }
+    }
+
+    setTotalPines(total){
+        this.totalText.innerHTML = "Totale: " + total;
     }
 }
 

@@ -4,6 +4,7 @@ class ShrubsManager{
         this.headerValues = ["Famiglia", "Specie"];
         this.tHead = this.rootElement.createTHead();
         this.tBody = this.rootElement.createTBody();
+        this.totalText = document.querySelector(".total-shrubs-text");
     }
 
     init(){
@@ -26,6 +27,10 @@ class ShrubsManager{
             td.innerHTML = data[i];
             row.appendChild(td);
         }
+    }
+
+    setTotalShrubs(total){
+        this.totalText.innerHTML = "Totale: " + total;
     }
 }
 

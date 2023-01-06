@@ -1,6 +1,7 @@
 import FetchUtil from "../../common/js/fetch-util.js";
 import AnimalsManager from "./animals-manager.js";
 import ShrubsManager from "./shrubs-manager.js";
+import PinesManager from "./pines-manager.js";
 
 let dataToReceive = new URLSearchParams(window.location.search);
 let parkId = dataToReceive.get("parkId");
@@ -30,7 +31,7 @@ FetchUtil.postData("./php/read-animals.php", animalsData).then((response) => {
         animalData["generazione"],
         animalData["sesso"],
         animalData["stato"],
-        animalData["eta"]
+        animalData["eta"],
       );
     });
   } else {
@@ -50,9 +51,12 @@ FetchUtil.postData("./php/read-shrubs.php", shrubsData).then((response) => {
     const shrubsManager = new ShrubsManager(shrubsTable);
     shrubsManager.init();
     let parseData = JSON.parse(response.data);
+    let nShrubs = 0; 
     parseData.forEach((shrubData) => {
       shrubsManager.setRowData("arbusti", shrubData["nome"]);
+      nShrubs++;
     });
+    shrubsManager.setTotalShrubs(nShrubs);
   } else {
     noShrubsText.classList.toggle("hide", false);
     shrubsTable.classList.toggle("hide", true);
@@ -70,9 +74,12 @@ FetchUtil.postData("./php/read-pines.php", pinesData).then((response) => {
     const pinesManager = new PinesManager(pinesTable);
     pinesManager.init();
     let parseData = JSON.parse(response.data);
+    let nPines = 0;
     parseData.forEach((pineData) => {
-      
+      pinesManager.setRowData("alberi", pineData["nome"]);
+      nPines++;
     });
+    pinesManager.setTotalPines(nPines);
   } else {
     noPinesText.classList.toggle("hide", false);
     pinesTable.classList.toggle("hide", true);
