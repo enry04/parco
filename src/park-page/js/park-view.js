@@ -55,8 +55,8 @@ FetchUtil.postData("./php/read-shrubs.php", shrubsData).then((response) => {
     let parseData = JSON.parse(response.data);
     let nShrubs = 0;
     parseData.forEach((shrubData) => {
-      shrubsManager.setRowData("arbusti", shrubData["nome"]);
-      nShrubs++;
+      shrubsManager.setRowData("arbusti", shrubData["nome"], shrubData["nArbusti"]);
+      nShrubs += shrubData["nArbusti"];
     });
     shrubsManager.setTotalShrubs(nShrubs);
   } else {
@@ -78,8 +78,8 @@ FetchUtil.postData("./php/read-pines.php", pinesData).then((response) => {
     let parseData = JSON.parse(response.data);
     let nPines = 0;
     parseData.forEach((pineData) => {
-      pinesManager.setRowData("alberi", pineData["nome"]);
-      nPines++;
+      pinesManager.setRowData("alberi", pineData["nome"], pineData["nPini"]);
+      nPines += pineData["nPini"];
     });
     pinesManager.setTotalPines(nPines);
   } else {

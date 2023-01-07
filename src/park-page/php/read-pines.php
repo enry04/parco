@@ -10,7 +10,7 @@ $data = json_decode($json);
 
 $parkId = $data->parkId;
 
-$query = $pdo->prepare("SELECT * FROM tSpecieFlora INNER JOIN tVegetale ON tVegetale.idSpecieFlora = tSpecieFlora.id WHERE tVegetale.idParco =:parkId AND tSpecieFlora.nome LIKE '%pino%' GROUP BY tSpecieFlora.nome");
+$query = $pdo->prepare("SELECT tSpecieFlora.nome, tVegetale.*,COUNT(tSpecieFlora.nome) AS nPini FROM tSpecieFlora INNER JOIN tVegetale ON tVegetale.idSpecieFlora = tSpecieFlora.id WHERE tVegetale.idParco =:parkId AND tSpecieFlora.nome LIKE '%pino%' GROUP BY tSpecieFlora.nome");
 $query->execute(["parkId" => $parkId]);
 $dataList = $query->fetchAll();
 $result = null;

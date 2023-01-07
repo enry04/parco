@@ -1,7 +1,7 @@
 class ShrubsManager{
     constructor(tableElement){
         this.rootElement = tableElement;
-        this.headerValues = ["Famiglia", "Specie","quantità"];
+        this.headerValues = ["Famiglia", "Specie","Quantità presente"];
         this.tHead = this.rootElement.createTHead();
         this.tBody = this.rootElement.createTBody();
         this.totalText = document.querySelector(".total-shrubs-text");
@@ -19,8 +19,8 @@ class ShrubsManager{
             row.appendChild(th);
         }
     }
-    setRowData(family,species){
-        let data = [family, species];
+    setRowData(family,species, quantity){
+        let data = [family, species, quantity];
         let row = this.tBody.insertRow();
         for(let i = 0; i < data.length; i++){
             let td = document.createElement("td");
@@ -30,7 +30,7 @@ class ShrubsManager{
     }
 
     setTotalShrubs(total){
-        this.totalText.innerHTML = "Totale: " + total;
+        this.totalText.innerHTML = "Quantità totale di arbusti: " + total;
     }
 }
 
