@@ -54,6 +54,14 @@
             </div>
         </div>
     </main>
+    <h4>Gli animali a rischio di estinzione...</h4>
+    <div class="extinction-container" id="extinction">
+    </div>
+    <h4>I cuccioli nati quest' anno...</h4>
+    <div class="births-container" id="births">
+
+    </div>
+
     <script src="./js/main-page-view.js" type="module"></script>
 </body>
 

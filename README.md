@@ -37,6 +37,7 @@ paragraph -> #abd1c6
 btn -> #f9bc60
 btnText -> #001e1d
 border -> #001e1d
+terthiary -> #e16162
 
 **form**
 

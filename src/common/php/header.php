@@ -14,13 +14,28 @@
             <h4>
                 <a <?= ($page == "parks") ? $active : '' ?> class="header-option" href="../parks-page/parks-page.php"> I nostri parchi</a>
             </h4>
-            <div class="hamburger-container">
-                <input type="checkbox" class="option-btn">
-                <div class="bar1"></div>
-                <div class="bar2"></div>
-                <div class="bar3"></div>
-            </div>
+            <h5 class="popUp-block">
+                <div class="hamburger-container">
+                    <input type="checkbox" class="option-btn">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                </div>
+                <div class="popUp-menu-container hide">
+                    <div class="popUp-arrow">
+                    </div>
+                    <div class="popUp-inner">
+                        <div class="popUp-line">
+                            <a href="../main-page/main-page.php#extinction">Gli esemplari a rischio</a>
+                        </div>
+                        <div class="popUp-line">
+                            <a href="../main-page/main-page.php#births">Le nuove nascite</a>
+                        </div>
+                    </div>
+                </div>
+            </h5>
             </input>
         </div>
     </div>
 </header>
+<script src="../common/js/hamburger-manager.js" type="module"></script>
