@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Creato il: Gen 03, 2023 alle 16:36
+-- Creato il: Gen 07, 2023 alle 12:48
 -- Versione del server: 10.4.27-MariaDB
 -- Versione PHP: 8.0.25
 
@@ -33,9 +33,44 @@ CREATE TABLE `tAnimale` (
   `idSpecieFauna` int(30) NOT NULL,
   `generazione` varchar(30) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `sesso` varchar(30) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `stato` varchar(100) NOT NULL,
-  `età` date NOT NULL
+  `stato` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `eta` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dump dei dati per la tabella `tAnimale`
+--
+
+INSERT INTO `tAnimale` (`id`, `idParco`, `idSpecieFauna`, `generazione`, `sesso`, `stato`, `eta`) VALUES
+(1, 12, 9, 'adulto', 'femmina', 'in salute', 10),
+(2, 33, 2, 'cucciolo', 'femmina', 'malato', 3),
+(3, 34, 10, 'cucciolo', 'femmina', 'malato', 2),
+(4, 14, 4, 'adulto', 'maschio', 'malato', 9),
+(5, 11, 11, 'cucciolo', 'femmina', 'malato', 11),
+(6, 30, 12, 'adulto', 'femmina', 'in salute', 5),
+(7, 12, 13, 'adulto', 'femmina', 'malato', 40),
+(8, 27, 14, 'cucciolo', 'femmina', 'in salute', 12),
+(9, 27, 15, 'adulto', 'femmina', 'in salute', 12),
+(10, 6, 16, 'cucciolo', 'maschio', 'in salute', 1),
+(11, 6, 16, 'cucciolo', 'maschio', 'in salute', 1),
+(12, 6, 16, 'cucciolo', 'maschio', 'in salute', 1),
+(13, 6, 16, 'cucciolo', 'maschio', 'in salute', 1),
+(14, 27, 14, 'anziano', 'femmina', 'in salute', 40),
+(15, 27, 17, 'adulto', 'maschio', 'malato', 12),
+(16, 27, 18, 'adulto', 'femmina', 'in salute', 21),
+(17, 27, 19, 'cucciolo', 'maschio', 'malato', 2),
+(18, 12, 20, 'adulto', 'maschio', 'in salute', 10),
+(19, 4, 21, 'adulto', 'maschio', 'in salute', 1),
+(20, 4, 22, 'adulto', 'maschio', 'malato', 2),
+(21, 4, 23, 'cucciolo', 'femmina', 'in salute', 2),
+(22, 4, 23, 'cucciolo', 'femmina', 'in salute', 23),
+(23, 4, 24, 'adulto', 'femmina', 'in salute', 1),
+(24, 4, 25, 'adulto', 'femmina', 'in salute', 1),
+(25, 4, 8, 'adulto', 'femmina', 'in salute', 1),
+(26, 17, 26, 'cucciolo', 'femmina', 'malato', 21),
+(27, 17, 26, 'anziano', 'femmina', 'malato', 50),
+(28, 17, 27, 'anziano', 'maschio', 'in salute', 21),
+(29, 17, 28, 'adulto', 'maschio', 'malato', 25);
 
 -- --------------------------------------------------------
 
@@ -48,6 +83,15 @@ CREATE TABLE `tFamigliaFlora` (
   `nome` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dump dei dati per la tabella `tFamigliaFlora`
+--
+
+INSERT INTO `tFamigliaFlora` (`id`, `nome`) VALUES
+(1, 'arbusto'),
+(2, 'pianta erbacea'),
+(3, 'albero');
+
 -- --------------------------------------------------------
 
 --
@@ -58,6 +102,23 @@ CREATE TABLE `tOrdineAppartenenzaFauna` (
   `id` int(30) NOT NULL,
   `nome` varchar(30) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dump dei dati per la tabella `tOrdineAppartenenzaFauna`
+--
+
+INSERT INTO `tOrdineAppartenenzaFauna` (`id`, `nome`) VALUES
+(1, 'anfibio'),
+(2, 'uccello '),
+(3, 'felino'),
+(4, 'pesce'),
+(5, 'mollusco'),
+(6, 'canide'),
+(7, 'insetto'),
+(8, 'rettile'),
+(9, 'roditore'),
+(10, 'aracnide'),
+(11, 'mammifero');
 
 -- --------------------------------------------------------
 
@@ -165,9 +226,42 @@ INSERT INTO `tRegione` (`id`, `nome`) VALUES
 CREATE TABLE `tSpecieFauna` (
   `id` int(30) NOT NULL,
   `nome` varchar(30) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `idOrdineAppartenenzaFauna` int(30) NOT NULL,
-  `stato` varchar(30) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL
+  `idOrdineAppartenenzaFauna` int(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dump dei dati per la tabella `tSpecieFauna`
+--
+
+INSERT INTO `tSpecieFauna` (`id`, `nome`, `idOrdineAppartenenzaFauna`) VALUES
+(1, 'rospo', 1),
+(2, 'aquila', 2),
+(3, 'condor', 2),
+(4, 'falco', 2),
+(5, 'tigre', 3),
+(6, 'gatto', 3),
+(7, 'tigre bianca', 3),
+(8, 'squalo bianco', 4),
+(9, 'squalo martello', 4),
+(10, 'falco reale', 2),
+(11, 'sanguisuga', 5),
+(12, 'colomba', 2),
+(13, 'balenottera azzurra', 4),
+(14, 'lupo', 6),
+(15, 'cane', 6),
+(16, 'zanzara', 7),
+(17, 'drago di komodo', 8),
+(18, 'ratto', 9),
+(19, 'topo', 9),
+(20, 'gabbiano', 2),
+(21, 'ragno', 10),
+(22, 'scimmia', 11),
+(23, 'pantigana', 9),
+(24, 'pesce palla', 4),
+(25, 'squalo balena', 4),
+(26, 'gorilla', 11),
+(27, 'orca', 11),
+(28, 'scimpanze', 11);
 
 -- --------------------------------------------------------
 
@@ -181,6 +275,28 @@ CREATE TABLE `tSpecieFlora` (
   `idFamigliaFlora` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dump dei dati per la tabella `tSpecieFlora`
+--
+
+INSERT INTO `tSpecieFlora` (`id`, `nome`, `idFamigliaFlora`) VALUES
+(1, 'viola', 2),
+(2, 'pino', 3),
+(3, 'pino bianco', 3),
+(4, 'lavanda', 1),
+(5, 'rosmarino', 1),
+(6, 'rododendro', 1),
+(7, 'pino rosso', 3),
+(8, 'quercia', 3),
+(9, 'pero', 3),
+(10, 'melo', 3),
+(11, 'castagno', 3),
+(12, 'baobab', 3),
+(13, 'margherita', 1),
+(14, 'primula', 2),
+(15, 'acacia', 3),
+(16, 'rosa', 2);
+
 -- --------------------------------------------------------
 
 --
@@ -193,6 +309,41 @@ CREATE TABLE `tVegetale` (
   `idSpecieFlora` int(11) NOT NULL,
   `stagioneFioritura` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dump dei dati per la tabella `tVegetale`
+--
+
+INSERT INTO `tVegetale` (`id`, `idParco`, `idSpecieFlora`, `stagioneFioritura`) VALUES
+(1, 36, 2, 'estate'),
+(2, 36, 3, 'estate'),
+(3, 36, 2, 'primavera'),
+(4, 4, 4, 'estate'),
+(5, 27, 5, 'inverno'),
+(6, 27, 6, 'primavera'),
+(7, 30, 2, 'estate'),
+(8, 30, 5, 'primavera'),
+(9, 4, 3, 'primavera'),
+(10, 4, 7, 'primavera'),
+(11, 4, 2, 'primavera'),
+(12, 27, 2, 'primavera'),
+(13, 27, 8, 'estate'),
+(14, 27, 9, 'estate'),
+(15, 4, 10, 'primavera'),
+(16, 4, 11, 'primavera'),
+(17, 4, 7, 'estate'),
+(18, 4, 7, 'estate'),
+(19, 4, 1, 'primavera'),
+(20, 12, 12, 'primavera'),
+(21, 4, 6, 'estate'),
+(22, 4, 6, 'primavera'),
+(23, 4, 13, 'estate'),
+(24, 4, 14, 'primavera'),
+(25, 4, 15, 'primavera'),
+(26, 4, 7, 'primavera'),
+(27, 4, 16, 'estate'),
+(28, 17, 10, 'primavera'),
+(29, 17, 8, 'inverno');
 
 --
 -- Indici per le tabelle scaricate
@@ -235,6 +386,12 @@ ALTER TABLE `tSpecieFauna`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indici per le tabelle `tSpecieFlora`
+--
+ALTER TABLE `tSpecieFlora`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indici per le tabelle `tVegetale`
 --
 ALTER TABLE `tVegetale`
@@ -248,19 +405,19 @@ ALTER TABLE `tVegetale`
 -- AUTO_INCREMENT per la tabella `tAnimale`
 --
 ALTER TABLE `tAnimale`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT per la tabella `tFamigliaFlora`
 --
 ALTER TABLE `tFamigliaFlora`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT per la tabella `tOrdineAppartenenzaFauna`
 --
 ALTER TABLE `tOrdineAppartenenzaFauna`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT per la tabella `tParco`
@@ -278,13 +435,19 @@ ALTER TABLE `tRegione`
 -- AUTO_INCREMENT per la tabella `tSpecieFauna`
 --
 ALTER TABLE `tSpecieFauna`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+
+--
+-- AUTO_INCREMENT per la tabella `tSpecieFlora`
+--
+ALTER TABLE `tSpecieFlora`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT per la tabella `tVegetale`
 --
 ALTER TABLE `tVegetale`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
