@@ -6,6 +6,7 @@ class FormManager {
         this.elements = {};
         this.vegetableFamilies = vegetableFamilies;
         this.currentParkId = parkId;
+        this.popUp = document.querySelector(".pop-up-container");
     }
 
     init() {
@@ -42,7 +43,7 @@ class FormManager {
             if (event.target.value == 0) {
                 this.elements.animalElements.animalForm.classList.toggle("hide", false);
                 this.elements.vegetableElements.vegetableForm.classList.toggle("hide", true);
-            } else {
+            } else if(event.target.value == 1){
                 this.elements.animalElements.animalForm.classList.toggle("hide", true);
                 this.elements.vegetableElements.vegetableForm.classList.toggle("hide", false);
             }
@@ -98,14 +99,20 @@ class FormManager {
                 age: parseInt(this.elements.animalElements.ageNumber.value),
             }
 
-            console.log(animalData);
-
             FetchUtil.postData("./php/add-animal.php", animalData).then((response) => {
                 if(response.status == "error"){
                     console.log(response.data);
                 }
             });
-
+            this.elements.exemplarySelect.value = "";
+            this.elements.animalElements.animalForm.classList.toggle("hide", true);
+            this.popUp.classList.toggle("pause" , false);
+            this.popUp.classList.toggle("running", true);
+            setTimeout(() =>{
+                this.popUp.classList.toggle("pause", true);
+                this.popUp.classList.toggle("running", false);
+            },5000);
+            this.elements.animalElements.animalForm.reset();
         })
 
         this.elements.vegetableElements.vegetableForm.addEventListener("submit", async (event) => {
@@ -140,6 +147,15 @@ class FormManager {
                     console.log(response.data);
                 }
             });
+            this.elements.exemplarySelect.value = "";
+            this.elements.vegetableElements.vegetableForm.classList.toggle("hide", true);
+            this.popUp.classList.toggle("pause" , false);
+            this.popUp.classList.toggle("running", true);
+            setTimeout(() =>{
+                this.popUp.classList.toggle("pause", true);
+                this.popUp.classList.toggle("running", false);
+            },5000);
+            this.elements.vegetableElements.vegetableForm.reset();
         })
     }
 

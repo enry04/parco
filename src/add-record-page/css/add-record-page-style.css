@@ -18,7 +18,7 @@ body {
   height: 70px;
 }
 
-.back-container:hover{
+.back-container:hover {
   background: url("../../common/images/icons/icon-back-hover.svg");
   background-position: center;
   background-repeat: no-repeat;
@@ -96,7 +96,6 @@ select > option {
   color: #abd1c6;
   background-color: #004643;
   border: solid 1px #001e1d;
-
 }
 
 input[type="text"] {
@@ -168,3 +167,43 @@ input[type="submit"]:hover {
 .checked {
   border: solid 1px #4f772d;
 }
+
+.pop-up-container{
+  top: -100px;
+  border: #f9bc60 solid 1px;
+  padding: 10px;
+  border-radius: 5px;
+  position: absolute;
+}
+
+.animation{
+  animation: pop-up-animation;
+  animation-timing-function: linear;
+  animation-duration: 5s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+}
+
+.pause{
+  animation-play-state: paused;
+}
+
+.running{
+  animation-play-state: running;
+}
+
+@keyframes pop-up-animation {
+  0% {
+    top: -100px;
+  }25%{
+    top: 0px;
+  }50%{
+    top: 0px;
+  }
+  100%{
+    top: -100px;
+  }
+}
+
+
+  

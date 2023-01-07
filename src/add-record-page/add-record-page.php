@@ -12,6 +12,9 @@
 </head>
 
 <body>
+<div class="pop-up-container pause animation">
+        <h4>Esemplare aggiunto!</h4>
+    </div>
     <div class="back-container"></div>
     <div class="main-container">
         <h5 style="color: #fffffe;">Aggiungi un esemplare</h5>

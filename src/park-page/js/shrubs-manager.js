@@ -1,7 +1,7 @@
 class ShrubsManager{
     constructor(tableElement){
         this.rootElement = tableElement;
-        this.headerValues = ["Famiglia", "Specie"];
+        this.headerValues = ["Famiglia", "Specie","quantità"];
         this.tHead = this.rootElement.createTHead();
         this.tBody = this.rootElement.createTBody();
         this.totalText = document.querySelector(".total-shrubs-text");
