@@ -98,7 +98,8 @@ select > option {
   border: solid 1px #001e1d;
 }
 
-input[type="text"] {
+input[type="text"],
+input[type="date"] {
   width: 200px;
   height: 40px;
   padding: 0 10px;
@@ -110,16 +111,13 @@ input[type="text"] {
   font-size: 15px;
 }
 
-input[type="number"] {
-  width: 150px;
-  height: 40px;
-  padding: 0 10px;
-  background: transparent;
-  outline: 0;
-  border: solid 1px #132a13;
+input[type="date"]{
+  cursor: pointer;
+  color: #abd1c6;
+}
+
+input[type="date"]:hover{
   color: #fffffe;
-  border-radius: 5px;
-  font-size: 15px;
 }
 
 input::-webkit-outer-spin-button,

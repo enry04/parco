@@ -63,7 +63,7 @@
                     </div>
                     <div class="row">
                         <div class="input-container">
-                            <input type="number" class="age-number" min="0" max="150" placeholder="Età(anni)" required onkeydown="javascript: return ['Backspace','Delete','ArrowLeft','ArrowRight'].includes(event.code) ? true : !isNaN(Number(event.key)) && event.code!=='Space'">
+                            <input type="date" class="date-input" required>
                         </div>
                     </div>
                     <div class="row submit-row ">

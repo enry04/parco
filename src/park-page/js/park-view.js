@@ -33,7 +33,7 @@ FetchUtil.postData("./php/read-animals.php", animalsData).then((response) => {
         animalData["generazione"],
         animalData["sesso"],
         animalData["stato"],
-        animalData["eta"] + " anni"
+        new Date(animalData["dataNascita"]).toLocaleDateString("en-GB"),
       );
     });
   } else {
@@ -128,7 +128,7 @@ FetchUtil.postData("./php/read-olders.php", oldersData).then((response) => {
       oldersManager.setRowData(
         olderData["nome"],
         olderData["order"],
-        olderData["eta"] + " anni"
+        olderData["dataNascita"] + " anni",
       );
     });
   } else {

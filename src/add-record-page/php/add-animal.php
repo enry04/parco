@@ -17,7 +17,7 @@ $age = $data->age;
 $result = null;
 
 try {
-    $query = $pdo->prepare("INSERT INTO tAnimale (idParco, idSpecieFauna, generazione, sesso, stato, eta) VALUES (:parkId, :speciesId, :generation, :gender, :state, :age)");
+    $query = $pdo->prepare("INSERT INTO tAnimale (idParco, idSpecieFauna, generazione, sesso, stato, dataNascita) VALUES (:parkId, :speciesId, :generation, :gender, :state, :age)");
     $query->execute(["parkId" => $parkId, "speciesId" => $speciesId, "gender" => $gender, "generation" => $generation, "state" => $state, "age" => $age]);
     $result = array(
         'data' => null,

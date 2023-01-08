@@ -24,7 +24,7 @@ class FormManager {
                 genderSelect: this.rootElement.querySelector(".gender-select"),
                 generationSelect: this.rootElement.querySelector(".generation-select"),
                 stateSelect: this.rootElement.querySelector(".state-select"),
-                ageNumber: this.rootElement.querySelector(".age-number"),
+                bornDate: this.rootElement.querySelector(".date-input"),
                 animalForm: this.rootElement.querySelector(".animal-form"),
             },
             vegetableContainer: this.rootElement.querySelector(".vegetable-container"),
@@ -90,13 +90,14 @@ class FormManager {
                     });
                 }
             });
+            let date = new Date(this.elements.animalElements.bornDate.value);
             const animalData = {
                 parkId: parseInt(this.currentParkId),
                 speciesId: parseInt(speciesId),
                 gender: this.elements.animalElements.genderSelect.value,
                 generation: this.elements.animalElements.generationSelect.value,
                 state: this.elements.animalElements.stateSelect.value,
-                age: parseInt(this.elements.animalElements.ageNumber.value),
+                age: date.toISOString().slice(0, 19).replace("T", " "),
             }
 
             FetchUtil.postData("./php/add-animal.php", animalData).then((response) => {
