@@ -128,7 +128,7 @@ FetchUtil.postData("./php/read-olders.php", oldersData).then((response) => {
       oldersManager.setRowData(
         olderData["nome"],
         olderData["order"],
-        olderData["dataNascita"] + " anni",
+        olderData["dataNascita"],
       );
     });
   } else {

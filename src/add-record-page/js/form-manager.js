@@ -35,6 +35,8 @@ class FormManager {
                 vegetableForm: this.rootElement.querySelector(".vegetable-form"),
             },
         }
+        this.elements.animalElements.bornDate.max = new Date().toISOString().split("T")[0];
+        
         this.addVegetableOptions();
     }
 
