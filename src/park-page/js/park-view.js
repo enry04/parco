@@ -99,6 +99,7 @@ FetchUtil.postData("./php/read-cubs.php", cubsData).then((response) => {
     const cubsManager = new CubsManager(cubsTable);
     cubsManager.init();
     let parseData = JSON.parse(response.data);
+    let nCubs = 0;
     parseData.forEach((cubData) => {
       cubsManager.setRowData(
         cubData["nome"],
