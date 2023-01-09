@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Creato il: Gen 07, 2023 alle 12:48
+-- Creato il: Gen 09, 2023 alle 18:48
 -- Versione del server: 10.4.27-MariaDB
 -- Versione PHP: 8.0.25
 
@@ -34,43 +34,17 @@ CREATE TABLE `tAnimale` (
   `generazione` varchar(30) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `sesso` varchar(30) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `stato` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `eta` int(11) NOT NULL
+  `dataNascita` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dump dei dati per la tabella `tAnimale`
 --
 
-INSERT INTO `tAnimale` (`id`, `idParco`, `idSpecieFauna`, `generazione`, `sesso`, `stato`, `eta`) VALUES
-(1, 12, 9, 'adulto', 'femmina', 'in salute', 10),
-(2, 33, 2, 'cucciolo', 'femmina', 'malato', 3),
-(3, 34, 10, 'cucciolo', 'femmina', 'malato', 2),
-(4, 14, 4, 'adulto', 'maschio', 'malato', 9),
-(5, 11, 11, 'cucciolo', 'femmina', 'malato', 11),
-(6, 30, 12, 'adulto', 'femmina', 'in salute', 5),
-(7, 12, 13, 'adulto', 'femmina', 'malato', 40),
-(8, 27, 14, 'cucciolo', 'femmina', 'in salute', 12),
-(9, 27, 15, 'adulto', 'femmina', 'in salute', 12),
-(10, 6, 16, 'cucciolo', 'maschio', 'in salute', 1),
-(11, 6, 16, 'cucciolo', 'maschio', 'in salute', 1),
-(12, 6, 16, 'cucciolo', 'maschio', 'in salute', 1),
-(13, 6, 16, 'cucciolo', 'maschio', 'in salute', 1),
-(14, 27, 14, 'anziano', 'femmina', 'in salute', 40),
-(15, 27, 17, 'adulto', 'maschio', 'malato', 12),
-(16, 27, 18, 'adulto', 'femmina', 'in salute', 21),
-(17, 27, 19, 'cucciolo', 'maschio', 'malato', 2),
-(18, 12, 20, 'adulto', 'maschio', 'in salute', 10),
-(19, 4, 21, 'adulto', 'maschio', 'in salute', 1),
-(20, 4, 22, 'adulto', 'maschio', 'malato', 2),
-(21, 4, 23, 'cucciolo', 'femmina', 'in salute', 2),
-(22, 4, 23, 'cucciolo', 'femmina', 'in salute', 23),
-(23, 4, 24, 'adulto', 'femmina', 'in salute', 1),
-(24, 4, 25, 'adulto', 'femmina', 'in salute', 1),
-(25, 4, 8, 'adulto', 'femmina', 'in salute', 1),
-(26, 17, 26, 'cucciolo', 'femmina', 'malato', 21),
-(27, 17, 26, 'anziano', 'femmina', 'malato', 50),
-(28, 17, 27, 'anziano', 'maschio', 'in salute', 21),
-(29, 17, 28, 'adulto', 'maschio', 'malato', 25);
+INSERT INTO `tAnimale` (`id`, `idParco`, `idSpecieFauna`, `generazione`, `sesso`, `stato`, `dataNascita`) VALUES
+(31, 12, 29, 'anziano', 'femmina', 'malato', '2014-08-15'),
+(35, 12, 32, 'adulto', 'femmina', 'malato', '2022-12-06'),
+(36, 12, 32, 'cucciolo', 'femmina', 'in salute', '2018-06-09');
 
 -- --------------------------------------------------------
 
@@ -261,7 +235,9 @@ INSERT INTO `tSpecieFauna` (`id`, `nome`, `idOrdineAppartenenzaFauna`) VALUES
 (25, 'squalo balena', 4),
 (26, 'gorilla', 11),
 (27, 'orca', 11),
-(28, 'scimpanze', 11);
+(28, 'scimpanze', 11),
+(29, 'lucertola', 8),
+(32, 'medusa', 4);
 
 -- --------------------------------------------------------
 
@@ -405,7 +381,7 @@ ALTER TABLE `tVegetale`
 -- AUTO_INCREMENT per la tabella `tAnimale`
 --
 ALTER TABLE `tAnimale`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT per la tabella `tFamigliaFlora`
@@ -417,7 +393,7 @@ ALTER TABLE `tFamigliaFlora`
 -- AUTO_INCREMENT per la tabella `tOrdineAppartenenzaFauna`
 --
 ALTER TABLE `tOrdineAppartenenzaFauna`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT per la tabella `tParco`
@@ -435,7 +411,7 @@ ALTER TABLE `tRegione`
 -- AUTO_INCREMENT per la tabella `tSpecieFauna`
 --
 ALTER TABLE `tSpecieFauna`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT per la tabella `tSpecieFlora`
