@@ -61,7 +61,7 @@
     <div class="births-container" id="births">
         <h4 class="no-current-year-cubs-text hide">Non è nato nessun cucciolo quest' anno!</h4>
         <table class="current-year-cubs-table">
-             ,m 
+            
         </table>
     </div>
 
