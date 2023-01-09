@@ -66,15 +66,31 @@ class OldersManager {
     // }else{
     //     age = seconds + " secondi";
     // }
+    // let years = dob.getYear() - today.getYear();
+    // let months = dob.getMonth() - today.getMonth();
+    // let days = dob.getDate() - today.getDate();
+    // let tempAge = (years * 365) + (months * 31) + days;
+    // let ageYears = tempAge / years;
     let today = new Date();
     let dob = new Date(birth);
-    let years = dob.getYear() - today.getYear();
-    let months = dob.getMonth() - today.getMonth();
-    let days = dob.getDate() - today.getDate();
-    let tempAge = (years * 365) + (months * 31) + days;
-    let ageYears = tempAge / years;
-    console.log(ageYears);
-    let data = [species, order];
+    let yearAge = today.getFullYear() - dob.getFullYear();
+    let fullAge = "";
+    let monthAge;
+    if (yearAge === 0) {
+      monthAge = today.getMonth() - dob.getMonth();
+      fullAge = monthAge + "mesi";
+    } else {
+      debugger;
+      let currentM = today.getMonth() + 1;
+      let monthDob = dob.getMonth() + 1;
+      let ageMonth = currentM + 12 - monthDob;
+      if (ageMonth < 12) {
+        yearAge--;
+      }
+      fullAge = yearAge + " anni";
+    }
+    console.log(yearAge);
+    let data = [species, order, fullAge];
     let row = this.tBody.insertRow();
     for (let i = 0; i < data.length; i++) {
       let td = document.createElement("td");

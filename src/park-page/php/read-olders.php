@@ -10,7 +10,7 @@ $data = json_decode($json);
 
 $parkId= $data->parkId;
 
-$query = $pdo->prepare("SELECT tAnimale.*, tSpecieFauna.*, tOrdineAppartenenzaFauna.nome AS 'order' FROM tAnimale INNER JOIN tSpecieFauna ON tAnimale.idSpecieFauna = tSpecieFauna.id INNER JOIN tOrdineAppartenenzaFauna ON tSpecieFauna.idOrdineAppartenenzaFauna = tOrdineAppartenenzaFauna.id WHERE tAnimale.idParco =:parkId GROUP BY tSpecieFauna.nome");
+$query = $pdo->prepare("SELECT tAnimale.*, tSpecieFauna.*, MAX(tAnimale.dataNascita) AS dataNascitaOlder, tOrdineAppartenenzaFauna.nome AS 'order' FROM tAnimale INNER JOIN tSpecieFauna ON tAnimale.idSpecieFauna = tSpecieFauna.id INNER JOIN tOrdineAppartenenzaFauna ON tSpecieFauna.idOrdineAppartenenzaFauna = tOrdineAppartenenzaFauna.id WHERE tAnimale.idParco =:parkId GROUP BY tSpecieFauna.nome");
 $query->execute(["parkId" => $parkId]);
 $dataList = $query->fetchAll();
 $result = null;
