@@ -1,7 +1,7 @@
 class ExtinctionManager {
     constructor(tableElement) {
         this.rootElement = tableElement;
-        this.headerValues = ["Ordine di appartenenza", "Specie", "Percentuale esemplari malati"];
+        this.headerValues = ["Ordine di appartenenza", "Specie", "esemplari malati", "totale esemplari", "percentuale malati"];
         this.tHead = this.rootElement.createTHead();
         this.tBody = this.rootElement.createTBody();
     }
@@ -18,9 +18,9 @@ class ExtinctionManager {
             row.appendChild(th);
         }
     }
-    setRowData(order, species, percentage) {
+    setRowData(order, species, nSicks, nTot, percentage) {
         let perc = Math.trunc(percentage) + "%";
-        let data = [order, species, perc];
+        let data = [order, species, nSicks, nTot, perc];
         let row = this.tBody.insertRow();
         for (let i = 0; i < data.length; i++) {
             let td = document.createElement("td");

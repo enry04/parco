@@ -16,8 +16,9 @@ FetchUtil.postData("./php/read-extinction.php", {}).then((response) => {
     const extinctionManager = new ExtinctionManager(extinctionTable);
     extinctionManager.init();
     let parseData = JSON.parse(response.data);
+
     parseData.forEach((extinctionData) => {
-        extinctionManager.setRowData(extinctionData["nomeOrdine"], extinctionData["nomeSpecie"], extinctionData["percEsemplariMalati"]);
+        extinctionManager.setRowData(extinctionData["nomeOrdine"], extinctionData["nomeSpecie"], extinctionData["esemplariMalati"], extinctionData["nEsemplari"], extinctionData["percMalati"]);
     })
   } else {
     noExtinctionText.classList.toggle("hide", false);
