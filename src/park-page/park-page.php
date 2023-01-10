@@ -23,7 +23,7 @@
     <div class="animals-container">
         <h4 class="no-animals-text hide">Non è stato avvistato nessun animale</h4>
         <table class="animal-table">
-            
+
         </table>
     </div>
 
@@ -32,7 +32,7 @@
     <div class="shrubs-container">
         <h4 class="no-shrubs-text hide">Non ci sono arbusti in questo parco</h4>
         <table class="shrubs-table">
-            
+
         </table>
         <footer>
             <h5 class="total-shrubs-text"></h5>
@@ -65,17 +65,15 @@
     <div class="olders-container">
         <h4 class="no-olders-text hide">Non è stato avvistato nessun animale</h4>
         <table class="olders-table">
-            
+
         </table>
     </div>
 
-    <footer class="page-footer">
-        <div class="add-record-container">
-            <h6 class="add-text">
-                Avvistato un<br> nuovo esemplare?<br><span class="add-record-btn">clicca qui</span>
-            </h6>
-        </div>
-    </footer>
+    <div class="add-record-container">
+        <h6 class="add-text">
+            Avvistato un<br> nuovo esemplare?<br><span class="add-record-btn">clicca qui</span>
+        </h6>
+    </div>
     <script src="./js/park-view.js" type="module"></script>
 </body>
 
