@@ -217,7 +217,8 @@ a {
 .no-pines-text,
 .no-cubs-text,
 .no-olders-text,
-.no-current-year-cubs-text {
+.no-births-text,
+.no-extinction-text {
   color: #e16162;
 }
 
@@ -226,7 +227,8 @@ a {
 .pines-container,
 .cubs-container,
 .olders-container,
-.births-container {
+.births-container,
+.extinction-container {
   position: relative;
   width: 100%;
   display: flex;

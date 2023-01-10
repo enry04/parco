@@ -1,7 +1,7 @@
-class CurrentYearCubsManager {
+class ExtinctionManager {
     constructor(tableElement) {
         this.rootElement = tableElement;
-        this.headerValues = ["Codice animale", "Parco in cui vive", "Ordine di appartenenza", "Specie", "Sesso", "Stato", "età"];
+        this.headerValues = ["Ordine di appartenenza", "Specie", "Percentuale esemplari malati"];
         this.tHead = this.rootElement.createTHead();
         this.tBody = this.rootElement.createTBody();
     }
@@ -18,8 +18,9 @@ class CurrentYearCubsManager {
             row.appendChild(th);
         }
     }
-    setRowData(id, park, order, species, gender, state, age) {
-        let data = [id, park, order, species, gender, state, age];
+    setRowData(order, species, percentage) {
+        let perc = Math.trunc(percentage) + "%";
+        let data = [order, species, perc];
         let row = this.tBody.insertRow();
         for (let i = 0; i < data.length; i++) {
             let td = document.createElement("td");
@@ -29,4 +30,4 @@ class CurrentYearCubsManager {
     }
 }
 
-export default CurrentYearCubsManager;
+export default ExtinctionManager;

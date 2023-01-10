@@ -56,11 +56,15 @@
     </main>
     <h4>Gli animali a rischio di estinzione...</h4>
     <div class="extinction-container" id="extinction">
+        <h4 class="no-extinction-text hide">Non ci sono animali a rischio di estinzione</h4>
+        <table class="extinction-table">
+
+        </table>
     </div>
     <h4>I cuccioli nati quest' anno...</h4>
     <div class="births-container" id="births">
-        <h4 class="no-current-year-cubs-text hide">Non è nato nessun cucciolo quest' anno!</h4>
-        <table class="current-year-cubs-table">
+        <h4 class="no-births-text hide">Non è nato nessun cucciolo quest' anno!</h4>
+        <table class="births-table">
             
         </table>
     </div>

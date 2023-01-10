@@ -23,8 +23,8 @@ gestire estinzione animali -> Se tot animali della stessa specie sono malati all
 1. tRegione -> id, nome;
 2. tParco -> id, nome, idRegione;
 3. tOrdineAppartenenzaFauna -> id, nome;
-4. tSpecieFauna -> id, nome, idOrdineAppartenenzaFauna, stato(è a rischio estinzione?);
-5. tAnimale -> id, idParco, idSpecieFauna, generazione(Adulto/cucciolo), sesso, stato(è in salute);
+4. tSpecieFauna -> id, nome, idOrdineAppartenenzaFauna;
+5. tAnimale -> id, idParco, idSpecieFauna, generazione(Adulto/cucciolo), sesso, stato(è in salute), dataNascta;
 6. tFamigliaFlora -> id, nome;
 7. tSpecieFlora -> id, nome, idFamigliaFlora;
 8. tVegetale -> id, idParco, idSpecieFlora, stagioneFioritura;
