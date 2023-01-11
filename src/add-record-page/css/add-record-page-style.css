@@ -88,7 +88,7 @@ select {
 select:hover,
 select > option:hover {
   box-shadow: 0 0 5px #001e1d;
-  border: #001e1d 1px solid;
+  border: #f9bc60 1px solid;
   color: #fffffe;
 }
 
@@ -130,7 +130,7 @@ input::-webkit-inner-spin-button {
 input:hover,
 input:checked,
 input:valid {
-  border: solid 1px #001e1d;
+  border: solid 1px #f9bc60;
 }
 
 ::placeholder {
@@ -156,6 +156,11 @@ input[type="submit"] {
 
 input[type="submit"]:hover {
   box-shadow: 0 0 5px #001e1d;
+}
+
+.select-checked{
+  color: #fffffe;
+  border: #f9bc60 solid 1px;
 }
 
 .submit-row {

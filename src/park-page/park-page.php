@@ -71,7 +71,7 @@
 
     <div class="add-record-container">
         <h6 class="add-text">
-            Avvistato un<br> nuovo esemplare?<br><span class="add-record-btn">clicca qui</span>
+            Avvistato un<br> nuovo esemplare?<br><span class="add-record-btn">Clicca qui</span>
         </h6>
     </div>
     <script src="./js/park-view.js" type="module"></script>

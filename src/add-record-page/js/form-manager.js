@@ -36,7 +36,6 @@ class FormManager {
             },
         }
         this.elements.animalElements.bornDate.max = new Date().toISOString().split("T")[0];
-        
         this.addVegetableOptions();
     }
 
@@ -45,11 +44,33 @@ class FormManager {
             if (event.target.value == 0) {
                 this.elements.animalElements.animalForm.classList.toggle("hide", false);
                 this.elements.vegetableElements.vegetableForm.classList.toggle("hide", true);
+                this.elements.exemplarySelect.classList.toggle("select-checked", true);
             } else if(event.target.value == 1){
                 this.elements.animalElements.animalForm.classList.toggle("hide", true);
                 this.elements.vegetableElements.vegetableForm.classList.toggle("hide", false);
+                this.elements.exemplarySelect.classList.toggle("select-checked", true);
             }
-        })
+        });
+
+        this.elements.animalElements.genderSelect.addEventListener("change", () => {
+            this.elements.animalElements.genderSelect.classList.toggle("select-checked", true);
+        });
+
+        this.elements.animalElements.generationSelect.addEventListener("change", () => {
+            this.elements.animalElements.generationSelect.classList.toggle("select-checked", true);
+        });
+
+        this.elements.animalElements.stateSelect.addEventListener("change", () => {
+            this.elements.animalElements.stateSelect.classList.toggle("select-checked", true);
+        });
+
+        this.elements.vegetableElements.familySelect.addEventListener("change", () => {
+            this.elements.vegetableElements.familySelect.classList.toggle("select-checked", true);
+        });
+
+        this.elements.vegetableElements.seasonSelect.addEventListener("change", () => {
+            this.elements.vegetableElements.seasonSelect.classList.toggle("select-checked", true);
+        });
 
         this.elements.animalElements.animalForm.addEventListener("submit", async (event) => {
             event.preventDefault();
@@ -108,6 +129,10 @@ class FormManager {
                 }
             });
             this.elements.exemplarySelect.value = "";
+            this.elements.exemplarySelect.classList.toggle("select-checked", false);
+            this.elements.animalElements.genderSelect.classList.toggle("select-checked", false);
+            this.elements.animalElements.stateSelect.classList.toggle("select-checked", false);
+            this.elements.animalElements.generationSelect.classList.toggle("select-checked", false);
             this.elements.animalElements.animalForm.classList.toggle("hide", true);
             this.popUp.classList.toggle("pause" , false);
             this.popUp.classList.toggle("running", true);
@@ -152,6 +177,8 @@ class FormManager {
             });
             this.elements.exemplarySelect.value = "";
             this.elements.vegetableElements.vegetableForm.classList.toggle("hide", true);
+            this.elements.vegetableElements.familySelect.classList.toggle("select-checked", false);
+            this.elements.vegetableElements.seasonSelect.classList.toggle("select-checked", false);
             this.popUp.classList.toggle("pause" , false);
             this.popUp.classList.toggle("running", true);
             setTimeout(() =>{
