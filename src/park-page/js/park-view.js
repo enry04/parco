@@ -46,10 +46,12 @@ let shrubsData = {
 };
 const noShrubsText = document.querySelector(".no-shrubs-text");
 const shrubsTable = document.querySelector(".shrubs-table");
+const shrubsFooter = document.querySelector(".shrubs-footer");
 FetchUtil.postData("./php/read-shrubs.php", shrubsData).then((response) => {
   if (response.status == "success") {
     noShrubsText.classList.toggle("hide", true);
     shrubsTable.classList.toggle("hide", false);
+    shrubsFooter.classList.toggle("hide", false);
     const shrubsManager = new ShrubsManager(shrubsTable);
     shrubsManager.init();
     let parseData = JSON.parse(response.data);
@@ -62,6 +64,8 @@ FetchUtil.postData("./php/read-shrubs.php", shrubsData).then((response) => {
   } else {
     noShrubsText.classList.toggle("hide", false);
     shrubsTable.classList.toggle("hide", true);
+    shrubsFooter.classList.toggle("hide", true);
+
   }
 });
 let pinesData = {
@@ -69,10 +73,12 @@ let pinesData = {
 };
 const noPinesText = document.querySelector(".no-pines-text");
 const pinesTable = document.querySelector(".pines-table");
+const pinesFooter = document.querySelector(".pines-footer");
 FetchUtil.postData("./php/read-pines.php", pinesData).then((response) => {
   if (response.status == "success") {
     noPinesText.classList.toggle("hide", true);
     pinesTable.classList.toggle("hide", false);
+    pinesFooter.classList.toggle("hide",false);
     const pinesManager = new PinesManager(pinesTable);
     pinesManager.init();
     let parseData = JSON.parse(response.data);
@@ -85,6 +91,7 @@ FetchUtil.postData("./php/read-pines.php", pinesData).then((response) => {
   } else {
     noPinesText.classList.toggle("hide", false);
     pinesTable.classList.toggle("hide", true);
+    pinesFooter.classList.toggle("hide",true);
   }
 });
 const cubsData = {

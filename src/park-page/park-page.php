@@ -34,7 +34,7 @@
         <table class="shrubs-table">
 
         </table>
-        <footer>
+        <footer class="shrubs-footer">
             <h5 class="total-shrubs-text"></h5>
         </footer>
     </div>
@@ -46,7 +46,7 @@
         <table class="pines-table">
 
         </table>
-        <footer>
+        <footer class="pines-footer">
             <h5 class="total-pines-text"></h5>
         </footer>
     </div>

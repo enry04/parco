@@ -176,6 +176,7 @@ class FormManager {
                 }
             });
             this.elements.exemplarySelect.value = "";
+            this.elements.exemplarySelect.classList.toggle("select-checked", false);
             this.elements.vegetableElements.vegetableForm.classList.toggle("hide", true);
             this.elements.vegetableElements.familySelect.classList.toggle("select-checked", false);
             this.elements.vegetableElements.seasonSelect.classList.toggle("select-checked", false);
