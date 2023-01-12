@@ -1,0 +1,95 @@
+header {
+  margin-bottom: 150px;
+}
+
+.regions-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 60px;
+  margin-bottom: 200px;
+}
+
+select {
+  width: 200px;
+  height: 40px;
+  background: transparent;
+  text-align: center;
+  outline: 0;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: #f9bc60;
+  color: #001e1d;
+  font-size: 14px;
+}
+
+select:hover,
+select > option:hover {
+  box-shadow: 0 0 5px #001e1d;
+  border: #001e1d 1px solid;
+}
+
+select > option {
+  color: #001e1d;
+  border: solid 1px #001e1d;
+  background-color: #f9bc60;
+}
+
+.parks-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  row-gap: 100px;
+}
+
+.item-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+}
+
+.park-image-container {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 500px;
+  height: 370px;
+  border-radius: 10px;
+  min-width: 450px;
+  min-height: 320px;
+}
+
+.info-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  gap: 20px;
+}
+
+.park-title-text{
+  color: #fffffe;
+}
+
+.park-description-text {
+  max-width: 800px;
+  text-align: center;
+  min-width: 500px;
+}
+
+.details-btn{
+  outline: 0;
+  background-color: #f9bc60;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 6px 10px;
+  border-radius: 10px;
+  border: solid 1px #001e1d;
+}
+
+.details-btn:hover{
+  box-shadow: 0 0 5px #001e1d;
+}

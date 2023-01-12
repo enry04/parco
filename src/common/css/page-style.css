@@ -1,0 +1,300 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: poppins;
+}
+
+body {
+  background-color: #004643;
+  margin: 0 4%;
+  padding-bottom: 20px;
+}
+
+header,
+main {
+  margin: 0 0 200px;
+}
+
+footer {
+  margin-top: 100px;
+}
+
+h1,
+h2,
+h3,
+h3,
+h4,
+a {
+  color: #fffffe;
+  text-shadow: 0px 4px 4px rgba(42, 0, 25, 0.25);
+  font-weight: 300;
+}
+
+h5,
+h6 {
+  color: #abd1c6;
+}
+
+h2{
+  font-size: 36px;
+}
+
+h3 {
+  font-size: 32px;
+}
+
+h4 {
+  font-size: 28px;
+}
+
+h5 {
+  font-size: 22px;
+}
+
+h6 {
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.active-page {
+  color: #abd1c6;
+  text-decoration: underline #abd1c6;
+  text-underline-offset: 9px;
+}
+
+.header-option:hover {
+  color: #abd1c6;
+  text-decoration: underline #abd1c6;
+  text-underline-offset: 9px;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  margin-top: 20px;
+}
+
+.right-header-container,
+.left-header-container {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 50px;
+}
+.right-header-container,
+.left-header-container {
+  justify-content: space-evenly;
+}
+
+.logo-container {
+  background: url("../images/icons/icon-logo.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 125px;
+  height: 125px;
+}
+
+.hamburger-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  width: 32px;
+  height: 26px;
+  z-index: 1;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+  width: 100%;
+  height: 4px;
+  border-radius: 10px;
+  background-color: #fffffe;
+}
+
+.hamburger-container:hover .bar1,
+.hamburger-container:hover .bar2,
+.hamburger-container:hover .bar3 {
+  background-color: #abd1c6;
+}
+
+.bar1 {
+  transform-origin: 0% 0%;
+  transition: transform 0.4s ease-in-out;
+}
+.bar2 {
+  transition: transform 0.1s ease-in-out;
+}
+.bar3 {
+  transform-origin: 0% 100%;
+  transition: transform 0.4s ease-in-out;
+}
+.option-btn {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  display: block;
+  height: 32px;
+  width: 32px;
+  z-index: 2;
+}
+
+.option-btn:checked ~ .bar1,
+.option-btn:checked ~ .bar2,
+.option-btn:checked ~ .bar3 {
+  background-color: #abd1c6;
+}
+
+.option-btn:checked ~ .bar1 {
+  transform: rotate(45deg);
+}
+
+.option-btn:checked ~ .bar2 {
+  transform: scaleY(0);
+}
+
+.option-btn:checked ~ .bar3 {
+  transform: rotate(-45deg);
+}
+
+.popUp-block {
+  position: relative;
+}
+
+.popUp-menu-container {
+  position: absolute;
+  right: -290%;
+  margin-top: 5px;
+  border-top: 20px solid transparent;
+}
+
+.popUp-arrow {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: -7px;
+  left: 45%;
+  background: #f9bc60;
+  border-radius: 5px;
+  z-index: -1;
+  transform: rotate(-45deg);
+}
+
+.popUp-inner {
+  padding: 10px 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #f9bc60;
+  border-radius: 5px;
+}
+
+.popUp-line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 188px;
+  padding: 3px 0 3px 0;
+}
+
+.popUp-line a {
+  color: #001e1d !important;
+  font-size: 17px;
+  text-decoration: none;
+}
+
+.popUp-line a:hover {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.no-animals-text,
+.no-shrubs-text,
+.no-pines-text,
+.no-cubs-text,
+.no-olders-text,
+.no-births-text,
+.no-extinction-text {
+  color: #e16162;
+  margin: 30px 0 30px 0;
+}
+
+.animals-container,
+.shrubs-container,
+.pines-container,
+.cubs-container,
+.olders-container,
+.births-container,
+.extinction-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  margin-bottom: 100px;
+  flex-direction: column;
+}
+
+table {
+  width: 90%;
+  border-spacing: 0;
+  border-collapse: separate;
+  border-radius: 5px;
+  border: #001e1d solid 1px;
+}
+
+/* Apply a border to the right of all but the last column */
+table th:not(:last-child),
+table td:not(:last-child) {
+  border-right: 1px solid #001e1d;
+}
+
+/* Apply a border to the bottom of all but the last row */
+table thead th {
+  border-bottom: #001e1d solid 1px;
+}
+
+table > thead > tr:not(:last-child) > th,
+table > thead > tr:not(:last-child) > td,
+table > tbody > tr:not(:last-child) > th,
+table > tbody > tr:not(:last-child) > td,
+table > tr:not(:last-child) > td,
+table > tr:not(:last-child) > th,
+table > thead:not(:last-child),
+table > tbody:not(:last-child) {
+  border-bottom: 1px solid #001e1d;
+}
+
+table th,
+table td {
+  text-align: center;
+  padding: 10px;
+}
+
+table th {
+  font-size: 22px;
+  color: #fffffe;
+}
+
+table td {
+  color: #abd1c6;
+  font-size: 20px;
+}
+
+.hide {
+  display: none !important;
+}
+
+@font-face {
+  font-family: poppins;
+  src: url("../fonts/Poppins-Regular.ttf");
+}

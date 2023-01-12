@@ -1,0 +1,92 @@
+body{
+    height: 100vh;
+    position: relative;
+}
+
+.main-container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    gap: 100px;
+}
+
+.row{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.contact-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.message-area,
+.submit-btn{
+    width: 100%;
+}
+
+input,
+textarea{
+    padding: 6px 10px;
+    outline: 0;
+    background-color: transparent;
+    border-radius: 10px;
+    border: solid 1px #001e1d;
+    font-size: 16px;
+    color: #fffffe;
+}
+
+.name-text,
+.email-text{
+   width: 300px;
+   height: 30px;
+}
+
+textarea{
+    min-width: 200px;
+    min-height: 40px;
+}
+
+.name-text:hover,
+.email-text:hover,
+.message-area:hover,
+.name-text:valid,
+.email-text:valid,
+.message-area:valid{
+    border: solid 1px #f9bc60;
+}
+
+.submit-btn{
+    cursor: pointer;
+    background-color: #f9bc60;
+    color: #001e1d;
+    height: 45px;
+}
+
+.submit-btn:hover{
+    box-shadow: 0 0 5px #001e1d;
+
+}
+
+::placeholder{
+    color: #abd1c6;
+}
+
+input:focus::placeholder,
+input:hover::placeholder,
+textarea:focus::placeholder,
+textarea:hover::placeholder {
+  color: #fffffe;
+}
