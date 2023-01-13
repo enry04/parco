@@ -129,7 +129,8 @@ input::-webkit-inner-spin-button {
 
 input:hover,
 input:checked,
-input:valid {
+input:valid,
+input:focus {
   border: solid 1px #f9bc60;
 }
 

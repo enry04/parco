@@ -64,7 +64,10 @@ textarea{
 .message-area:hover,
 .name-text:valid,
 .email-text:valid,
-.message-area:valid{
+.message-area:valid,
+.name-text:focus,
+.email-text:focus,
+.message-area:focus{
     border: solid 1px #f9bc60;
 }
 

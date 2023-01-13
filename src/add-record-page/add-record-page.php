@@ -63,7 +63,7 @@
                     </div>
                     <div class="row">
                         <div class="input-container">
-                            <input type="date" class="date-input" required>
+                            <input type="date" class="date-input" required >
                         </div>
                     </div>
                     <div class="row submit-row ">
