@@ -1,7 +1,7 @@
 class AnimalsManager{
     constructor(tableElement){
         this.rootElement = tableElement;
-        this.headerValues = ["Codice animale", "Specie", "Ordine di appartenenza", "Generazione", "Sesso", "Stato", "Data di nascita"];
+        this.headerValues = ["Codice animale", "Ordine di appartenenza", "Specie", "Generazione", "Sesso", "Stato", "Data di nascita"];
         this.tHead = this.rootElement.createTHead();
         this.tBody = this.rootElement.createTBody();
     }

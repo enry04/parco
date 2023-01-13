@@ -1,7 +1,7 @@
 class ExtinctionManager {
     constructor(tableElement) {
         this.rootElement = tableElement;
-        this.headerValues = ["Ordine di appartenenza", "Specie", "esemplari malati", "totale esemplari", "percentuale malati"];
+        this.headerValues = ["Ordine di appartenenza", "Specie", "Esemplari malati", "Totale esemplari", "Percentuale malati"];
         this.tHead = this.rootElement.createTHead();
         this.tBody = this.rootElement.createTBody();
     }

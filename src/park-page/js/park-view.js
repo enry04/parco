@@ -28,8 +28,8 @@ FetchUtil.postData("./php/read-animals.php", animalsData).then((response) => {
     parseData.forEach((animalData) => {
       animalsManager.setRowData(
         animalData["idAnimale"],
-        animalData["nomeSpecie"],
         animalData["nomeOrdine"],
+        animalData["nomeSpecie"],
         animalData["generazione"],
         animalData["sesso"],
         animalData["stato"],
@@ -134,8 +134,8 @@ FetchUtil.postData("./php/read-olders.php", oldersData).then((response) => {
     console.log(parseData);
     parseData.forEach((olderData) => {
       oldersManager.setRowData(
-        olderData["nome"],
         olderData["order"],
+        olderData["nome"],
         olderData["dataNascitaOlder"],
       );
     });

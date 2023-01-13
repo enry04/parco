@@ -3,7 +3,7 @@ import AgeUtil from "../../common/js/age-util.js";
 class BirthsManager {
     constructor(tableElement) {
         this.rootElement = tableElement;
-        this.headerValues = ["Codice animale", "Parco in cui vive", "Ordine di appartenenza", "Specie", "Sesso", "Stato", "età"];
+        this.headerValues = ["Codice animale", "Parco in cui vive", "Ordine di appartenenza", "Specie", "Sesso", "Stato", "Età"];
         this.tHead = this.rootElement.createTHead();
         this.tBody = this.rootElement.createTBody();
     }

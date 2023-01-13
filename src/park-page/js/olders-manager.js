@@ -3,7 +3,7 @@ import AgeUtil from "../../common/js/age-util.js";
 class OldersManager {
   constructor(tableElement) {
     this.rootElement = tableElement;
-    this.headerValues = ["Specie", "Ordine di appartenenza", "età"];
+    this.headerValues = ["Ordine di appartenenza", "Specie", "Età"];
     this.tHead = this.rootElement.createTHead();
     this.tBody = this.rootElement.createTBody();
   }
